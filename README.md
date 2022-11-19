@@ -1,7 +1,7 @@
 # bigluca
 
 <p align="center">
-  <img src="/assets/images/bigluca.png" width="256" />
+  <img src="bigluca.png" width="256" />
 </p>
 
 <p align="center">~ Cryptopapies NFT generator ~</p>
@@ -16,6 +16,4 @@
 
 ## License 📃
 
-bigluca is licensed under the MIT license.
-
-You can read the entire license [HERE](LICENSE)
+(c) Copyright 2022 Christian Visintin, all rights reserved.

@@ -5,7 +5,6 @@ edition = "2021"
 homepage = "https://cryptopapies.io/"
 include = ["src/**/*", "LICENSE", "README.md", "CHANGELOG.md"]
 keywords = ["nft", "cryptopapies", "generator"]
-license = "MIT"
 name = "bigluca"
 readme = "README.md"
 repository = "https://github.com/cryptopapies/bigluca"
@@ -20,12 +19,12 @@ anyhow = "^1.0"
 argh = "^0.1.9"
 chrono = { version = "^0.4", features = [ "serde" ] }
 dirs = "^4.0"
-lazy_static = "^1.4"
+env_logger = "^0.9"
+image = { version = "^0.24", default-features = false, features = [ "png" ] }
 log = "^0.4"
 rand = "^0.8"
 serde = { version = "^1", features = [ "derive" ] }
 serde_json = "^1.0"
-simplelog = "^0.12.0"
 thiserror = "^1"
 
 [dev-dependencies]

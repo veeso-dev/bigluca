@@ -1,6 +1,4 @@
 #[macro_use]
-extern crate lazy_static;
-#[macro_use]
 extern crate log;
 #[macro_use]
 extern crate serde;
@@ -8,6 +6,9 @@ extern crate serde;
 use log::LevelFilter;
 
 mod args;
+mod config;
+mod generator;
+mod nft;
 mod utils;
 
 use args::Args;
@@ -22,8 +23,6 @@ fn main() -> anyhow::Result<()> {
     if args.version {
         anyhow::bail!("bigluca {} - developed by {}", APP_VERSION, APP_AUTHORS)
     }
-    let config_dir =
-        utils::dirs::init_config_dir()?.expect("your system doesn't support config directory");
     // setup logging
     let log_level = if args.debug {
         LevelFilter::Debug
@@ -33,7 +32,7 @@ fn main() -> anyhow::Result<()> {
         LevelFilter::Off
     };
     if log_level != LevelFilter::Off {
-        utils::setup_logger(log_level, &utils::dirs::get_log_path(&config_dir))?;
+        env_logger::builder().filter_level(log_level).init();
     }
     info!("starting bigluca {}", APP_VERSION);
     Ok(())
