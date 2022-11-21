@@ -1,0 +1,20 @@
+[package]
+name = "bigluca_derive"
+version = "0.1.0"
+authors = ["Christian Visintin"]
+edition = "2021"
+description = "Derive macro which automatically returns a static array for collection's attributes"
+include = ["src/**/*"]
+repository = "https://github.com/cryptopapies/bigluca"
+
+[lib]
+doctest = false
+name = "bigluca_derive"
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "^1.0"
+quote = "^1.0"
+syn = "^1.0"
+
+[features]
