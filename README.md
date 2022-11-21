@@ -6,7 +6,7 @@
 
 <p align="center">~ Cryptopapies NFT generator ~</p>
 
-[![ci](https://github.com/veeso/meow/workflows/Build/badge.svg)](https://github.com/cryptopapies/bigluca/actions)
+[![ci](https://github.com/cryptopapies/bigluca/workflows/Build/badge.svg)](https://github.com/cryptopapies/bigluca/actions)
 
 ---
 

@@ -1,5 +1,7 @@
 //! # Dubai papi configuration
 
+use super::Validate;
+
 use std::path::PathBuf;
 
 /// Dubai papi generator configuration
@@ -13,10 +15,12 @@ pub struct DubaiPapiConfiguration {
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
 pub struct Assets {
     pub background: Background,
+    pub beard: Beard,
     pub car: Car,
     pub ear_pods: EarPods,
     pub eyes: Eyes,
     pub glasses: Glasses,
+    pub hair_color: HairColor,
     pub hair_style: HairStyle,
     pub hat_color: HatColor,
     pub skin: Skin,
@@ -25,6 +29,9 @@ pub struct Assets {
 
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
 pub struct Background {}
+
+#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+pub struct Beard {}
 
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
 pub struct Car {
@@ -52,6 +59,17 @@ pub struct Eyes {
 pub struct Glasses {
     pub eyeglasses: PathBuf,
     pub sunglasses: PathBuf,
+}
+
+#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+pub struct HairColor {
+    pub black: PathBuf,
+    pub brown: PathBuf,
+    pub blone: PathBuf,
+    pub blue: PathBuf,
+    pub green: PathBuf,
+    pub pink: PathBuf,
+    pub red: PathBuf,
 }
 
 #[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]

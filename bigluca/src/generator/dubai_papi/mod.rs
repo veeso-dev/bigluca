@@ -2,10 +2,12 @@
 //!
 //! Generator for the Dubai papi collection
 
+mod attributes;
+
 use super::GenerateNft;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, Metadata, Nft},
+    nft::{Attribute as NftAttribute, Metadata, Nft},
 };
 
 /// Dubai papi collection generator

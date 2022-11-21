@@ -1,4 +1,6 @@
 #[macro_use]
+extern crate bigluca_derive;
+#[macro_use]
 extern crate log;
 #[macro_use]
 extern crate serde;
@@ -12,6 +14,8 @@ mod nft;
 mod utils;
 
 use args::Args;
+
+use crate::config::{Configuration, Validate};
 
 const APP_VERSION: &str = env!("CARGO_PKG_VERSION");
 const APP_AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
@@ -35,5 +39,11 @@ fn main() -> anyhow::Result<()> {
         env_logger::builder().filter_level(log_level).init();
     }
     info!("starting bigluca {}", APP_VERSION);
+    info!("parsing configuration at {}", args.config.display());
+    let configuration = Configuration::parse(&args.config)?;
+    debug!("validating configuration");
+    configuration.validate()?;
+    info!("configuration is valid");
+
     Ok(())
 }
