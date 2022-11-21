@@ -9,6 +9,17 @@
         "nikola": "",
         "rolls_royal": ""
       },
+      "car_color": {
+        "black": "black/",
+        "blue": "blue/",
+        "gray": "gray/",
+        "green": "green/",
+        "orange": "orange/",
+        "pink": "pink/",
+        "red": "red/",
+        "white": "white/",
+        "yellow": "yellow/"
+      },
       "ear_pods": {
         "black": "",
         "white": ""
@@ -29,7 +40,8 @@
         "blonde": "blonde/",
         "blue": "blue/",
         "green": "green/",
-        "pink": "pink/"
+        "pink": "pink/",
+        "red": "red/"
       },
       "hair_style": {},
       "hat_color": {
