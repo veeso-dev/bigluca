@@ -1,9 +1,25 @@
+use crate::nft::{Attribute, IntoAttribute};
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Car {
     Baguette,
     Lambo,
     Nikola,
     RollsRoyal,
+}
+
+impl IntoAttribute for Car {
+    fn into_attribute(&self) -> Attribute {
+        Attribute::new(
+            "Car",
+            match self {
+                Self::Baguette => "Baguette",
+                Self::Lambo => "Lambo",
+                Self::Nikola => "Nikola",
+                Self::RollsRoyal => "RollsRoyal",
+            },
+        )
+    }
 }
 
 #[cfg(test)]

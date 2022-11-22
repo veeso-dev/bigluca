@@ -1,7 +1,9 @@
+use crate::nft::{Attribute, IntoAttribute};
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Top {
     BlackJacket,
-    BlueJacke,
+    BlueJacket,
     Shirt,
     TankTop,
     BlackTShirt,
@@ -10,6 +12,26 @@ pub enum Top {
     OrangeTShirt,
     RedTShirt,
     WhiteTShirt,
+}
+
+impl IntoAttribute for Top {
+    fn into_attribute(&self) -> Attribute {
+        Attribute::new(
+            "Top",
+            match self {
+                Self::BlackJacket => "Black Jacket",
+                Self::BlueJacket => "Blue Jacket",
+                Self::Shirt => "Shirt",
+                Self::TankTop => "Tank Top",
+                Self::BlackTShirt => "Black T-Shirt",
+                Self::BlueTShirt => "Blue T-Shirt",
+                Self::GreenTShirt => "Green T-Shirt",
+                Self::OrangeTShirt => "Orange T-Shirt",
+                Self::RedTShirt => "Red T-Shirt",
+                Self::WhiteTShirt => "White T-Shirt",
+            },
+        )
+    }
 }
 
 #[cfg(test)]
@@ -25,7 +47,7 @@ mod test {
             Top::all(),
             &[
                 Top::BlackJacket,
-                Top::BlueJacke,
+                Top::BlueJacket,
                 Top::Shirt,
                 Top::TankTop,
                 Top::BlackTShirt,

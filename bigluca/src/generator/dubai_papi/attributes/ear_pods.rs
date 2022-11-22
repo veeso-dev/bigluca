@@ -1,7 +1,21 @@
+use crate::nft::{Attribute, IntoAttribute};
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum EarPods {
     Black,
     White,
+}
+
+impl IntoAttribute for EarPods {
+    fn into_attribute(&self) -> Attribute {
+        Attribute::new(
+            "Ear Pods",
+            match self {
+                Self::Black => "Black",
+                Self::White => "White",
+            },
+        )
+    }
 }
 
 #[cfg(test)]

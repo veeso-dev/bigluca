@@ -28,7 +28,14 @@ pub struct Assets {
 }
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
-pub struct Background {}
+pub struct Background {
+    pub burj_al_arab: PathBuf,
+    pub burj_khalifa: PathBuf,
+    pub downtown: PathBuf,
+    pub dubai_marina_day: PathBuf,
+    pub dubai_marina_night: PathBuf,
+    pub skyline_night: PathBuf,
+}
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Beard {}

@@ -1,3 +1,5 @@
+use crate::nft::{Attribute, IntoAttribute};
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum CarColor {
     Black,
@@ -9,6 +11,25 @@ pub enum CarColor {
     Red,
     White,
     Yellow,
+}
+
+impl IntoAttribute for CarColor {
+    fn into_attribute(&self) -> Attribute {
+        Attribute::new(
+            "Car Color",
+            match self {
+                Self::Black => "Black",
+                Self::Blue => "Blue",
+                Self::Gray => "Gray",
+                Self::Green => "Green",
+                Self::Orange => "Orange",
+                Self::Pink => "Pink",
+                Self::Red => "Red",
+                Self::White => "White",
+                Self::Yellow => "Yellow",
+            },
+        )
+    }
 }
 
 #[cfg(test)]

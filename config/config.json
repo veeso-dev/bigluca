@@ -1,7 +1,14 @@
 {
   "dubai_papi": {
     "assets": {
-      "background": {},
+      "background": {
+        "burj_al_arab": "assets/images/background/burj_al_arab.png",
+        "burj_khalifa": "assets/images/background/burj_khalifa.png",
+        "downtown": "assets/images/background/downtown.png",
+        "dubai_marina_day": "assets/images/background/dubai_marina_day.png",
+        "dubai_marina_night": "assets/images/background/dubai_marina_night.png",
+        "skyline_night": "assets/images/background/skyline_night.png"
+      },
       "beard": {},
       "car": {
         "baguette": "",

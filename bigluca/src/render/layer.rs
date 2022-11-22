@@ -35,7 +35,7 @@ impl Layer {
 /// image rendering.
 /// The `paths` entity can be used to retrieve paths for the provided entity
 pub trait AsLayer<T> {
-    fn as_layer(&self, paths: T) -> anyhow::Result<Option<DynamicImage>>;
+    fn as_layer(&self, paths: T) -> anyhow::Result<Option<Layer>>;
 }
 
 #[cfg(test)]

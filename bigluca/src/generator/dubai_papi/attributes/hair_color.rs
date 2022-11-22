@@ -1,3 +1,5 @@
+use crate::nft::{Attribute, IntoAttribute};
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum HairColor {
     Black,
@@ -7,6 +9,23 @@ pub enum HairColor {
     Green,
     Pink,
     Red,
+}
+
+impl IntoAttribute for HairColor {
+    fn into_attribute(&self) -> Attribute {
+        Attribute::new(
+            "Top",
+            match self {
+                Self::Black => "Black",
+                Self::Brown => "Brown",
+                Self::Blonde => "Blonde",
+                Self::Blue => "Blue",
+                Self::Green => "Green",
+                Self::Pink => "Pink",
+                Self::Red => "Red",
+            },
+        )
+    }
 }
 
 #[cfg(test)]
