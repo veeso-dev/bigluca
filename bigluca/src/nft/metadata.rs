@@ -5,7 +5,7 @@ use ring::digest::{Context, SHA256};
 
 /// NFT Metadata
 /// reference: <https://docs.opensea.io/docs/metadata-standards>
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize, Serialize)]
 pub struct Metadata {
     /// A human readable description of the item. Markdown is supported.
     pub description: String,
@@ -20,7 +20,7 @@ pub struct Metadata {
 }
 
 /// Attributes related to this item
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize, Serialize)]
 pub struct Attribute {
     pub trait_type: String,
     pub value: String,
@@ -52,7 +52,7 @@ impl Metadata {
             attribute.hash(&mut digest_ctx);
         }
         let sha256 = digest_ctx.finish();
-        format!("{}", HEXLOWER.encode(&sha256.as_ref()))
+        HEXLOWER.encode(sha256.as_ref())
     }
 
     /// Return a string which contains prettified attributes

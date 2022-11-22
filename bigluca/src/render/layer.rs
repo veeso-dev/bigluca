@@ -31,11 +31,11 @@ impl Layer {
     }
 }
 
-/// the IntoLayer trait is required for image parts to create layers from a certain entity to load as layer in
+/// the AsLayer trait is required for image parts to create layers from a certain entity to load as layer in
 /// image rendering.
 /// The `paths` entity can be used to retrieve paths for the provided entity
-pub trait IntoLayer<T> {
-    fn into_layer(&self, paths: T) -> anyhow::Result<Option<DynamicImage>>;
+pub trait AsLayer<T> {
+    fn as_layer(&self, paths: T) -> anyhow::Result<Option<DynamicImage>>;
 }
 
 #[cfg(test)]

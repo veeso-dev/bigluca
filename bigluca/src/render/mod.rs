@@ -5,7 +5,7 @@
 mod layer;
 
 use image::{imageops, DynamicImage, GenericImage, GenericImageView, ImageBuffer, RgbaImage};
-pub use layer::{IntoLayer, Layer};
+pub use layer::{AsLayer, Layer};
 
 /// The engine which takes care of rendering layers into image
 pub struct RenderEngine;
