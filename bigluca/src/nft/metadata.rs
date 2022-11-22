@@ -25,7 +25,7 @@ pub struct Attribute {
 
 /// Trait to generate attribute parameters
 pub trait IntoAttribute {
-    fn into(&self) -> Attribute;
+    fn into_attribute(&self) -> Attribute;
 }
 
 impl Metadata {

@@ -1,4 +1,4 @@
-#[derive(Debug, AllAttributes, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Top {
     BlackJacket,
     BlueJacke,

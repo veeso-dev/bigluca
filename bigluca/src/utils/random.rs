@@ -9,6 +9,20 @@ pub fn choice<'a, T>(rng: &'a mut ThreadRng, choices: &'a [T]) -> &'a T {
     &choices[rng.gen_range(0..choices.len())]
 }
 
+/// Choose a random element from `choices` with a probability of `some_probability`%.
+/// Otherwise will return None
+pub fn choice_or_none<'a, T>(
+    rng: &'a mut ThreadRng,
+    choices: &'a [T],
+    some_probability: u8,
+) -> Option<&'a T> {
+    if happens(rng, some_probability) {
+        Some(choice(rng, choices))
+    } else {
+        None
+    }
+}
+
 /// Given a percentage, returns whether the event should happen
 /// Panics if `probability` is out of range 1-100
 pub fn happens(rng: &mut ThreadRng, probability: u8) -> bool {
@@ -46,6 +60,12 @@ mod tests {
     #[test]
     fn should_make_choice() {
         assert!(&[1, 2, 3].contains(choice(&mut rng(), &[1, 2, 3])));
+    }
+
+    #[test]
+    fn should_make_choice_or_return_none() {
+        assert!(&[1, 2, 3].contains(choice_or_none(&mut rng(), &[1, 2, 3], 100).unwrap()));
+        assert!(choice_or_none(&mut rng(), &[1, 2, 3], 0).is_none());
     }
 
     #[test]

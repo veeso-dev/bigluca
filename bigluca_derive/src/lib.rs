@@ -2,7 +2,7 @@ use proc_macro::{self, TokenStream};
 use quote::quote;
 use syn::{parse_macro_input, DeriveInput};
 
-#[proc_macro_derive(AllAttributes)]
+#[proc_macro_derive(AllVariants)]
 pub fn all_attributes(input: TokenStream) -> TokenStream {
     let DeriveInput { ident, data, .. } = parse_macro_input!(input);
     let name = &ident;
@@ -14,7 +14,7 @@ pub fn all_attributes(input: TokenStream) -> TokenStream {
             let ident = &variant.ident;
             tokens.push(quote! {#name::#ident});
         }
-        // Implement AllAttributes for type
+        // Implement AllVariants for type
         let output = quote! {
                 impl #ident {
                 pub fn all() -> &'static [Self] {
@@ -27,6 +27,6 @@ pub fn all_attributes(input: TokenStream) -> TokenStream {
 
         output.into()
     } else {
-        panic!("AllAttributes must be derived by a `Enum`")
+        panic!("AllVariants must be derived by a `Enum`")
     }
 }

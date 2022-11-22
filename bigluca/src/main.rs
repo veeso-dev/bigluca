@@ -9,6 +9,7 @@ use log::LevelFilter;
 
 mod args;
 mod config;
+mod database;
 mod generator;
 mod nft;
 mod utils;

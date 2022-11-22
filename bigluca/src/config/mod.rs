@@ -13,7 +13,7 @@ pub trait Validate {
 }
 
 /// Bigluca configuration
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Configuration {
     pub dubai_papi: DubaiPapiConfiguration,
 }

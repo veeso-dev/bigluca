@@ -5,14 +5,14 @@ use super::Validate;
 use std::path::PathBuf;
 
 /// Dubai papi generator configuration
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct DubaiPapiConfiguration {
     pub assets: Assets,
     pub gender_root: PathBuf,
 }
 
 /// Assets configuration
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Assets {
     pub background: Background,
     pub beard: Beard,
@@ -27,13 +27,13 @@ pub struct Assets {
     pub top: Top,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Background {}
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Beard {}
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Car {
     pub baguette: PathBuf,
     pub lambo: PathBuf,
@@ -41,13 +41,13 @@ pub struct Car {
     pub rolls_royal: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct EarPods {
     pub black: PathBuf,
     pub white: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Eyes {
     pub black: PathBuf,
     pub blue: PathBuf,
@@ -55,27 +55,27 @@ pub struct Eyes {
     pub green: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Glasses {
     pub eyeglasses: PathBuf,
     pub sunglasses: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct HairColor {
     pub black: PathBuf,
     pub brown: PathBuf,
-    pub blone: PathBuf,
+    pub blonde: PathBuf,
     pub blue: PathBuf,
     pub green: PathBuf,
     pub pink: PathBuf,
     pub red: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct HairStyle {}
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct HatColor {
     pub black: PathBuf,
     pub cyan: PathBuf,
@@ -83,7 +83,7 @@ pub struct HatColor {
     pub red: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Skin {
     pub dark: PathBuf,
     pub olive: PathBuf,
@@ -91,7 +91,7 @@ pub struct Skin {
     pub asian: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Top {
     pub black_jacket: PathBuf,
     pub blue_jacket: PathBuf,
