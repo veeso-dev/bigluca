@@ -1,0 +1,76 @@
+{
+  "dubai_papi": {
+    "assets": {
+      "background": {},
+      "beard": {},
+      "car": {
+        "baguette": "",
+        "lambo": "",
+        "nikola": "",
+        "rolls_royal": ""
+      },
+      "car_color": {
+        "black": "black/",
+        "blue": "blue/",
+        "gray": "gray/",
+        "green": "green/",
+        "orange": "orange/",
+        "pink": "pink/",
+        "red": "red/",
+        "white": "white/",
+        "yellow": "yellow/"
+      },
+      "ear_pods": {
+        "black": "",
+        "white": ""
+      },
+      "eyes": {
+        "black": "",
+        "blue": "",
+        "brown": "",
+        "green": ""
+      },
+      "glasses": {
+        "eyeglasses": "",
+        "sunglasses": ""
+      },
+      "hair_color": {
+        "black": "black/",
+        "brown": "brown/",
+        "blonde": "blonde/",
+        "blue": "blue/",
+        "green": "green/",
+        "pink": "pink/",
+        "red": "red/"
+      },
+      "hair_style": {},
+      "hat_color": {
+        "black": "",
+        "cyan": "",
+        "green": "",
+        "red": ""
+      },
+      "skin": {
+        "dark": "",
+        "olive": "",
+        "white": "",
+        "asian": ""
+      },
+      "top": {
+        "black_jacket": "",
+        "blue_jacket": "",
+        "shirt": "",
+        "tank_top": "",
+        "black_t_shirt": "",
+        "orange_t_shirt": "",
+        "red_t_shirt": "",
+        "green_t_shirt": "",
+        "white_t_shirt": ""
+      }
+    },
+    "gender_root": {
+      "male": "male/",
+      "female": "female/"
+    }
+  }
+}

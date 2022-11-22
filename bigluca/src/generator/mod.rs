@@ -18,15 +18,15 @@ pub trait GenerateNft {
 /// NFT generator
 pub struct Generator<'a> {
     collection: Collection,
-    config: Configuration,
+    config: &'a Configuration,
     database: &'a mut NftDatabase,
 }
 
 impl<'a> Generator<'a> {
     /// Instantiates a new Generator
     pub fn new(
-        config: Configuration,
         collection: Collection,
+        config: &'a Configuration,
         database: &'a mut NftDatabase,
     ) -> Self {
         Self {
@@ -42,7 +42,7 @@ impl<'a> GenerateNft for Generator<'a> {
     fn generate_nft(self) -> anyhow::Result<Nft> {
         match self.collection {
             Collection::DubaiPapi => {
-                DubaiPapi::new(self.config.dubai_papi, self.database).generate_nft()
+                DubaiPapi::new(&self.config.dubai_papi, self.database).generate_nft()
             }
         }
     }

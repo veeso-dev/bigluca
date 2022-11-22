@@ -2,6 +2,7 @@
 //!
 //! Cli args
 
+use log::LevelFilter;
 use std::path::PathBuf;
 
 use argh::FromArgs;
@@ -26,11 +27,23 @@ pub struct Args {
     )]
     pub collection: String,
     #[argh(option, short = 'd', description = "specify database path")]
-    pub database_path: String,
+    pub database_path: PathBuf,
     #[argh(option, short = 'o', description = "specify output directory")]
     pub output: PathBuf,
     #[argh(switch, short = 'v', description = "verbose mode")]
     pub verbose: bool,
     #[argh(switch, short = 'V', description = "print version")]
     pub version: bool,
+}
+
+impl From<&Args> for LevelFilter {
+    fn from(args: &Args) -> Self {
+        if args.debug {
+            LevelFilter::Debug
+        } else if args.verbose {
+            LevelFilter::Info
+        } else {
+            LevelFilter::Off
+        }
+    }
 }

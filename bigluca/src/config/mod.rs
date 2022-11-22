@@ -2,7 +2,6 @@
 
 mod dubai_papi;
 
-use std::fs;
 use std::path::Path;
 
 pub use dubai_papi::DubaiPapiConfiguration;
@@ -21,9 +20,7 @@ pub struct Configuration {
 impl Configuration {
     /// Parse and load configuration from file
     pub fn parse(path: &Path) -> anyhow::Result<Self> {
-        let file = fs::File::open(path)?;
-        let config = serde_json::from_reader(&file)?;
-        Ok(config)
+        crate::utils::serde::deserialize(path)
     }
 }
 
@@ -40,7 +37,7 @@ mod test {
 
     #[test]
     fn should_parse_and_validate_configuration_from_default() {
-        let config = Configuration::parse(Path::new("./config/config.json")).unwrap();
+        let config = Configuration::parse(Path::new("./test/config.json")).unwrap();
         assert!(config.validate().is_ok());
     }
 }

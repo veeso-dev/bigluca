@@ -26,7 +26,7 @@ impl FromStr for Collection {
 impl ToString for Collection {
     fn to_string(&self) -> String {
         match self {
-            Self::DubaiPapi => DUBAI_PAPI,
+            Self::DubaiPapi => "Dubai Papi",
         }
         .to_string()
     }
@@ -34,7 +34,7 @@ impl ToString for Collection {
 
 impl IntoAttribute for Collection {
     fn into_attribute(&self) -> Attribute {
-        Attribute::new("collection", self.to_string())
+        Attribute::new("Collection", self.to_string())
     }
 }
 
@@ -55,14 +55,14 @@ mod test {
 
     #[test]
     fn should_convert_collection_to_str() {
-        assert_eq!(Collection::DubaiPapi.to_string().as_str(), "dubai-papi");
+        assert_eq!(Collection::DubaiPapi.to_string().as_str(), "Dubai Papi");
     }
 
     #[test]
     fn should_convert_collection_to_attribute() {
         assert_eq!(
             Collection::DubaiPapi.into_attribute(),
-            Attribute::new("collection", "dubai-papi")
+            Attribute::new("Collection", "Dubai Papi")
         );
     }
 }

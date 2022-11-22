@@ -6,17 +6,25 @@ extern crate log;
 extern crate serde;
 
 use log::LevelFilter;
+use std::str::FromStr;
 
+mod app;
 mod args;
 mod config;
 mod database;
 mod generator;
 mod nft;
+mod render;
 mod utils;
 
 use args::Args;
 
-use crate::config::{Configuration, Validate};
+use crate::{
+    app::App,
+    config::{Configuration, Validate},
+    database::nft::NftDatabase,
+    generator::Collection,
+};
 
 const APP_VERSION: &str = env!("CARGO_PKG_VERSION");
 const APP_AUTHORS: &str = env!("CARGO_PKG_AUTHORS");
@@ -29,22 +37,29 @@ fn main() -> anyhow::Result<()> {
         anyhow::bail!("bigluca {} - developed by {}", APP_VERSION, APP_AUTHORS)
     }
     // setup logging
-    let log_level = if args.debug {
-        LevelFilter::Debug
-    } else if args.verbose {
-        LevelFilter::Info
-    } else {
-        LevelFilter::Off
-    };
+    let log_level = LevelFilter::from(&args);
     if log_level != LevelFilter::Off {
         env_logger::builder().filter_level(log_level).init();
     }
     info!("starting bigluca {}", APP_VERSION);
+
+    let collection = Collection::from_str(&args.collection)?;
+    info!("working on collection: {}", collection.to_string());
+
     info!("parsing configuration at {}", args.config.display());
     let configuration = Configuration::parse(&args.config)?;
     debug!("validating configuration");
     configuration.validate()?;
     info!("configuration is valid");
 
-    Ok(())
+    info!("loading database from {}", args.database_path.display());
+    let database = if args.database_path.exists() {
+        NftDatabase::load(&args.database_path)
+    } else {
+        debug!("database path doesn't exist, loading default db");
+        Ok(NftDatabase::default())
+    }?;
+    info!("database loaded");
+
+    App::new(collection, configuration, database, args.output).run(args.count)
 }

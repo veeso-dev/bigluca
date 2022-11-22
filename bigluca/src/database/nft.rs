@@ -17,21 +17,12 @@ pub struct NftDatabase {
 impl NftDatabase {
     /// Load NFT database
     pub fn load(path: &Path) -> anyhow::Result<Self> {
-        let f = fs::File::open(path)?;
-        let db = serde_json::from_reader(&f)?;
-        Ok(db)
+        crate::utils::serde::deserialize(path)
     }
 
     /// Commit changes to file
     pub fn commit(&self, path: &Path) -> anyhow::Result<()> {
-        let f = fs::OpenOptions::new()
-            .write(true)
-            .truncate(true)
-            .create(true)
-            .open(path)?;
-        serde_json::to_writer(f, self)?;
-
-        Ok(())
+        crate::utils::serde::serialize(self, path)
     }
 }
 
