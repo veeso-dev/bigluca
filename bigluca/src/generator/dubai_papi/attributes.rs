@@ -2,13 +2,12 @@
 //!
 //! This module defines the attributes for the collection
 
-use crate::{config::DubaiPapiConfiguration, nft::Attribute as NftAttribute};
-
 mod background;
 mod beard;
 mod car;
 mod car_color;
 mod ear_pods;
+mod eyes;
 mod gender;
 mod glasses;
 mod hair_color;
@@ -22,6 +21,7 @@ pub use beard::Beard;
 pub use car::Car;
 pub use car_color::CarColor;
 pub use ear_pods::EarPods;
+pub use eyes::Eyes;
 pub use gender::Gender;
 pub use glasses::Glasses;
 pub use hair_color::HairColor;

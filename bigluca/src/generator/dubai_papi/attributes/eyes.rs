@@ -1,22 +1,22 @@
 use crate::nft::{Attribute, IntoAttribute};
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
-pub enum HatColor {
+pub enum Eyes {
     Black,
-    Cyan,
+    Blue,
+    Brown,
     Green,
-    Red,
 }
 
-impl IntoAttribute for HatColor {
+impl IntoAttribute for Eyes {
     fn into_attribute(&self) -> Attribute {
         Attribute::new(
-            "Hat Color",
+            "Eyes",
             match self {
                 Self::Black => "Black",
-                Self::Cyan => "Cyan",
+                Self::Blue => "Blue",
+                Self::Brown => "Brown",
                 Self::Green => "Green",
-                Self::Red => "Red",
             },
         )
     }
@@ -32,13 +32,8 @@ mod test {
     #[test]
     fn should_get_all_attributes() {
         assert_eq!(
-            HatColor::all(),
-            &[
-                HatColor::Black,
-                HatColor::Cyan,
-                HatColor::Green,
-                HatColor::Red,
-            ]
+            Eyes::all(),
+            &[Eyes::Black, Eyes::Blue, Eyes::Brown, Eyes::Green,]
         )
     }
 }

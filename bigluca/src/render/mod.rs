@@ -92,10 +92,9 @@ mod test {
         let test_image_path = std::env::var("TEST_IMAGE_PATH").ok();
         if let Some(output_path) = test_image_path {
             let mut output_path = PathBuf::from(output_path);
-            let mut rng = crate::utils::random::rng();
             output_path.push(format!(
                 "{}.png",
-                crate::utils::random::random_alphanumeric_with_len(&mut rng, 8)
+                crate::utils::random::Random::default().random_alphanumeric_with_len(8)
             ));
             let mut file = std::fs::OpenOptions::new()
                 .create(true)

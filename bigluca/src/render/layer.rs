@@ -34,8 +34,8 @@ impl Layer {
 /// the AsLayer trait is required for image parts to create layers from a certain entity to load as layer in
 /// image rendering.
 /// The `paths` entity can be used to retrieve paths for the provided entity
-pub trait AsLayer<T> {
-    fn as_layer(&self, paths: T) -> anyhow::Result<Option<Layer>>;
+pub trait AsLayer<T, U> {
+    fn as_layer(&self, paths: T, states: U) -> anyhow::Result<Option<Layer>>;
 }
 
 #[cfg(test)]

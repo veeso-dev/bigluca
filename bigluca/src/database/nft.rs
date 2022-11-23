@@ -2,7 +2,6 @@
 //!
 //! This database contains the records for the NFT previously minted
 
-use std::fs;
 use std::path::Path;
 
 /// NFT database
@@ -32,6 +31,7 @@ mod test {
     use super::*;
 
     use pretty_assertions::assert_eq;
+    use std::fs::OpenOptions;
     use std::io::Write;
     use tempfile::NamedTempFile;
 
@@ -58,7 +58,7 @@ mod test {
     }
 
     fn write_db(path: &Path) {
-        let mut f = fs::OpenOptions::new()
+        let mut f = OpenOptions::new()
             .write(true)
             .truncate(true)
             .create(true)

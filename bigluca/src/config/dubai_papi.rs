@@ -8,7 +8,14 @@ use std::path::PathBuf;
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct DubaiPapiConfiguration {
     pub assets: Assets,
-    pub gender_root: PathBuf,
+    pub gender_roots: GenderRoots,
+}
+
+/// Gender root path
+#[derive(Debug, Clone, PartialEq, Deserialize)]
+pub struct GenderRoots {
+    pub male: PathBuf,
+    pub female: PathBuf,
 }
 
 /// Assets configuration
@@ -92,6 +99,7 @@ pub struct HatColor {
 
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct Skin {
+    pub root: PathBuf,
     pub dark: PathBuf,
     pub olive: PathBuf,
     pub white: PathBuf,

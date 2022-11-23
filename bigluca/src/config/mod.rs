@@ -26,7 +26,8 @@ impl Configuration {
 
 impl Validate for Configuration {
     fn validate(&self) -> anyhow::Result<()> {
-        todo!();
+        // TODO: implement with proc mcro
+        Ok(())
     }
 }
 

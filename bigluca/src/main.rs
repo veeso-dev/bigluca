@@ -61,5 +61,12 @@ fn main() -> anyhow::Result<()> {
     }?;
     info!("database loaded");
 
-    App::new(collection, configuration, database, args.output).run(args.count)
+    App::new(
+        collection,
+        configuration,
+        database,
+        args.database_path,
+        args.output,
+    )
+    .run(args.count)
 }

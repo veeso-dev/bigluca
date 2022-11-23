@@ -30,8 +30,12 @@ impl IntoAttribute for Background {
     }
 }
 
-impl AsLayer<DubaiPapiConfiguration> for Background {
-    fn as_layer(&self, paths: DubaiPapiConfiguration) -> anyhow::Result<Option<Layer>> {
+impl AsLayer<&DubaiPapiConfiguration, ()> for Background {
+    fn as_layer(
+        &self,
+        paths: &DubaiPapiConfiguration,
+        _states: (),
+    ) -> anyhow::Result<Option<Layer>> {
         Layer::from_path(
             match self {
                 Self::BurjAlArab => &paths.assets.background.burj_al_arab,
@@ -57,6 +61,16 @@ mod test {
 
     #[test]
     fn should_get_all_attributes() {
-        assert_eq!(Background::all(), &[])
+        assert_eq!(
+            Background::all(),
+            &[
+                Background::BurjAlArab,
+                Background::BurjKhalifa,
+                Background::Downtown,
+                Background::DubaiMarinaDay,
+                Background::DubaiMarinaNight,
+                Background::SkylineByNight,
+            ]
+        )
     }
 }

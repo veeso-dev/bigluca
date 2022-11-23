@@ -59,7 +59,7 @@ impl Metadata {
     pub fn pretty_attributes(&self) -> String {
         let mut s = String::default();
         for attribute in self.attributes.iter() {
-            s.push_str(format!("{}: {}", attribute.trait_type, attribute.value).as_str());
+            s.push_str(format!("{}: {} ", attribute.trait_type, attribute.value).as_str());
         }
         s
     }

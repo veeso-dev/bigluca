@@ -4,44 +4,51 @@
 
 use rand::{distributions::Alphanumeric, rngs::ThreadRng, thread_rng, Rng};
 
-/// Choose a random element from `choices`
-pub fn choice<'a, T>(rng: &'a mut ThreadRng, choices: &'a [T]) -> &'a T {
-    &choices[rng.gen_range(0..choices.len())]
+pub struct Random {
+    rng: ThreadRng,
 }
 
-/// Choose a random element from `choices` with a probability of `some_probability`%.
-/// Otherwise will return None
-pub fn choice_or_none<'a, T>(
-    rng: &'a mut ThreadRng,
-    choices: &'a [T],
-    some_probability: u8,
-) -> Option<&'a T> {
-    if happens(rng, some_probability) {
-        Some(choice(rng, choices))
-    } else {
-        None
+impl Default for Random {
+    fn default() -> Self {
+        Self { rng: thread_rng() }
     }
 }
 
-/// Given a percentage, returns whether the event should happen
-/// Panics if `probability` is out of range 1-100
-pub fn happens(rng: &mut ThreadRng, probability: u8) -> bool {
-    assert!(probability <= 100);
-    rng.gen_range(0..100) < probability
-}
+impl Random {
+    /// Choose a random element from `choices`
+    pub fn choice<'a, T>(&mut self, choices: &'a [T]) -> &'a T {
+        &choices[self.rng.gen_range(0..choices.len())]
+    }
 
-/// Generate a random alphanumeric string with provided length
-pub fn random_alphanumeric_with_len(rng: &mut ThreadRng, len: usize) -> String {
-    std::iter::repeat(())
-        .map(|()| rng.sample(Alphanumeric))
-        .map(char::from)
-        .take(len)
-        .collect()
-}
+    /// Choose a random element from `choices` with a probability of `some_probability`%.
+    /// Otherwise will return None
+    pub fn choice_or_none<'a, T>(
+        &mut self,
+        choices: &'a [T],
+        some_probability: u8,
+    ) -> Option<&'a T> {
+        if self.happens(some_probability) {
+            Some(self.choice(choices))
+        } else {
+            None
+        }
+    }
 
-/// Get random generator
-pub fn rng() -> ThreadRng {
-    thread_rng()
+    /// Given a percentage, returns whether the event should happen
+    /// Panics if `probability` is out of range 1-100
+    pub fn happens(&mut self, probability: u8) -> bool {
+        assert!(probability <= 100);
+        self.rng.gen_range(0..100) < probability
+    }
+
+    /// Generate a random alphanumeric string with provided length
+    pub fn random_alphanumeric_with_len(&mut self, len: usize) -> String {
+        std::iter::repeat(())
+            .map(|()| self.rng.sample(Alphanumeric))
+            .map(char::from)
+            .take(len)
+            .collect()
+    }
 }
 
 #[cfg(test)]
@@ -53,23 +60,26 @@ mod tests {
 
     #[test]
     fn should_tell_whether_event_happens() {
-        assert!(happens(&mut rng(), 100));
-        assert_eq!(happens(&mut rng(), 0), false);
+        assert!(Random::default().happens(100));
+        assert_eq!(Random::default().happens(0), false);
     }
 
     #[test]
     fn should_make_choice() {
-        assert!(&[1, 2, 3].contains(choice(&mut rng(), &[1, 2, 3])));
+        assert!(&[1, 2, 3].contains(Random::default().choice(&[1, 2, 3])));
     }
 
     #[test]
     fn should_make_choice_or_return_none() {
-        assert!(&[1, 2, 3].contains(choice_or_none(&mut rng(), &[1, 2, 3], 100).unwrap()));
-        assert!(choice_or_none(&mut rng(), &[1, 2, 3], 0).is_none());
+        assert!(&[1, 2, 3].contains(Random::default().choice_or_none(&[1, 2, 3], 100).unwrap()));
+        assert!(Random::default().choice_or_none(&[1, 2, 3], 0).is_none());
     }
 
     #[test]
     fn should_generate_random_alphanumeric_with_len() {
-        assert_eq!(random_alphanumeric_with_len(&mut rng(), 256).len(), 256);
+        assert_eq!(
+            Random::default().random_alphanumeric_with_len(256).len(),
+            256
+        );
     }
 }

@@ -13,7 +13,7 @@ where
         .write(true)
         .truncate(true)
         .open(path)?;
-    serde_json::to_writer(&file, serializable)?;
+    serde_json::to_writer_pretty(&file, serializable)?;
 
     Ok(())
 }

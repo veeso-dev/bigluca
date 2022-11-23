@@ -11,7 +11,7 @@ pub enum Skin {
 impl IntoAttribute for Skin {
     fn into_attribute(&self) -> Attribute {
         Attribute::new(
-            "Top",
+            "Skin",
             match self {
                 Self::Dark => "Dark",
                 Self::Olive => "Olive",

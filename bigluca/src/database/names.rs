@@ -32,7 +32,7 @@ pub const NAME_ATTRIBUTES: &[&str] = &[
     "Super",
     "Sweet",
     "Tall",
-    "TheGreatest",
+    "The Greatest",
     "Tiny",
     "Wealthy",
     "Wise",

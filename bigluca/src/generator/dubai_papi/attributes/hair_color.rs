@@ -14,7 +14,7 @@ pub enum HairColor {
 impl IntoAttribute for HairColor {
     fn into_attribute(&self) -> Attribute {
         Attribute::new(
-            "Top",
+            "Hair Color",
             match self {
                 Self::Black => "Black",
                 Self::Brown => "Brown",

@@ -11,35 +11,35 @@
       },
       "beard": {},
       "car": {
-        "baguette": "",
-        "lambo": "",
-        "nikola": "",
-        "rolls_royal": ""
+        "baguette": "assets/images/car/baguette",
+        "lambo": "assets/images/car/lambo",
+        "nikola": "assets/images/car/nikola",
+        "rolls_royal": "assets/images/car/rolls_royal"
       },
       "car_color": {
-        "black": "black/",
-        "blue": "blue/",
-        "gray": "gray/",
-        "green": "green/",
-        "orange": "orange/",
-        "pink": "pink/",
-        "red": "red/",
-        "white": "white/",
-        "yellow": "yellow/"
+        "black": "black.png",
+        "blue": "blue.png",
+        "gray": "gray.png",
+        "green": "green.png",
+        "orange": "orange.png",
+        "pink": "pink.png",
+        "red": "red.png",
+        "white": "white.png",
+        "yellow": "yellow.png"
       },
       "ear_pods": {
-        "black": "",
-        "white": ""
+        "black": "assets/images/car/ear_pods/black.png",
+        "white": "assets/images/car/ear_pods/white.png"
       },
       "eyes": {
-        "black": "",
-        "blue": "",
-        "brown": "",
-        "green": ""
+        "black": "assets/images/car/eyes/black.png",
+        "blue": "assets/images/car/eyes/blue.png",
+        "brown": "assets/images/car/eyes/brown.png",
+        "green": "assets/images/car/eyes/green.png"
       },
       "glasses": {
-        "eyeglasses": "",
-        "sunglasses": ""
+        "eyeglasses": "assets/images/car/glasses/eyeglasses.png",
+        "sunglasses": "assets/images/car/glasses/sunglasses.png"
       },
       "hair_color": {
         "black": "black/",
@@ -52,30 +52,31 @@
       },
       "hair_style": {},
       "hat_color": {
-        "black": "",
-        "cyan": "",
-        "green": "",
-        "red": ""
+        "black": "assets/images/car/hat_color/black.png",
+        "cyan": "assets/images/car/hat_color/cyan.png",
+        "green": "assets/images/car/hat_color/green.png",
+        "red": "assets/images/car/hat_color/red.png"
       },
       "skin": {
-        "dark": "",
-        "olive": "",
-        "white": "",
-        "asian": ""
+        "root": "assets/images/skin",
+        "dark": "dark.png",
+        "olive": "olive.png",
+        "white": "white.png",
+        "asian": "asian.png"
       },
       "top": {
-        "black_jacket": "",
-        "blue_jacket": "",
-        "shirt": "",
-        "tank_top": "",
-        "black_t_shirt": "",
-        "orange_t_shirt": "",
-        "red_t_shirt": "",
-        "green_t_shirt": "",
-        "white_t_shirt": ""
+        "black_jacket": "assets/images/car/top/black_jacket.png",
+        "blue_jacket": "assets/images/car/top/blue_jacket.png",
+        "shirt": "assets/images/car/top/shirt.png",
+        "tank_top": "assets/images/car/top/tank_top.png",
+        "black_t_shirt": "assets/images/car/top/black_t_shirt.png",
+        "orange_t_shirt": "assets/images/car/top/orange_t_shirt.png",
+        "red_t_shirt": "assets/images/car/top/red_t_shirt.png",
+        "green_t_shirt": "assets/images/car/top/green_t_shirt.png",
+        "white_t_shirt": "assets/images/car/top/white_t_shirt.png"
       }
     },
-    "gender_root": {
+    "gender_roots": {
       "male": "male/",
       "female": "female/"
     }

@@ -15,7 +15,8 @@ pub struct Args {
     #[argh(
         option,
         short = 'n',
-        description = "specify amount of NFTs to generate"
+        description = "specify amount of NFTs to generate",
+        default = "1"
     )]
     pub count: usize,
     #[argh(switch, short = 'D', description = "enable TRACE log level")]

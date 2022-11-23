@@ -2,7 +2,7 @@
 //!
 //! Main bigluca application
 
-use std::path::PathBuf;
+use std::{fs, path::PathBuf};
 
 use crate::{
     config::Configuration as EngineConfiguration,
@@ -16,7 +16,10 @@ pub struct App {
     collection: Collection,
     config: EngineConfiguration,
     database: NftDatabase,
+    database_path: PathBuf,
     output_dir: PathBuf,
+    success: bool,
+    created_files: Vec<PathBuf>,
 }
 
 impl App {
@@ -24,13 +27,17 @@ impl App {
         collection: Collection,
         config: EngineConfiguration,
         database: NftDatabase,
+        database_path: PathBuf,
         output_dir: PathBuf,
     ) -> Self {
         Self {
             collection,
             config,
             database,
+            database_path,
             output_dir,
+            success: false,
+            created_files: Vec::new(),
         }
     }
 
@@ -44,7 +51,7 @@ impl App {
             info!("index: {}", nft.collection_index());
             info!("name: {}", nft.metadata().name);
             info!("description: {}", nft.metadata().description);
-            info!("attributes:\n{}", nft.metadata().pretty_attributes());
+            info!("attributes: {}", nft.metadata().pretty_attributes());
             let mut output_metadata_file = self.output_dir.clone();
             output_metadata_file.push(format!(
                 "{:0width$}-{}.json",
@@ -66,9 +73,34 @@ impl App {
             nft.image()
                 .save_with_format(&output_image_file, image::ImageFormat::Png)?;
             info!("image written to {}", output_image_file.display());
+            self.created_files.push(output_image_file);
+            self.created_files.push(output_metadata_file);
         }
         debug!("terminating application");
+        self.success = true;
 
         Ok(())
+    }
+}
+
+impl Drop for App {
+    fn drop(&mut self) {
+        // if success, commit changes
+        if self.success {
+            info!("Minting was successful; commiting changes to database...");
+            match self.database.commit(&self.database_path) {
+                Ok(()) => info!("Changes committed"),
+                Err(e) => error!("Failed to commit changes: {}", e),
+            }
+        } else {
+            error!("Minting was unsuccesful; removing all generated files...");
+            for path in self.created_files.iter() {
+                match fs::remove_file(&path) {
+                    Ok(()) => debug!("removed file {}", path.display()),
+                    Err(e) => error!("failed to remove file {}: {}", path.display(), e),
+                }
+            }
+            info!("removed generated files");
+        }
     }
 }
