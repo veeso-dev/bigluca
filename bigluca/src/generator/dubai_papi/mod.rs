@@ -3,6 +3,7 @@
 //! Generator for the Dubai papi collection
 
 mod attributes;
+mod description;
 
 use self::attributes::{
     Background, Beard, Car, CarColor, EarPods, Eyes, Gender, Glasses, HairColor, HairStyle,
@@ -13,6 +14,7 @@ use super::GenerateNft;
 use crate::{
     config::DubaiPapiConfiguration,
     database::{names, nft::NftDatabase},
+    generator::dubai_papi::description::DescriptionGenerator,
     nft::{Attribute as NftAttribute, IntoAttribute, Metadata, Nft},
     render::{AsLayer, Layer, RenderEngine},
     utils::{collisions::try_for, random::Random},
@@ -123,8 +125,11 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             // get name
             let name = self.get_name(&mut random, gender)?;
             debug!("chosen name: {}", name);
-            // TODO: description
-            let description = String::default();
+            if self.database.names.contains(&name) {
+                error!("collision detected with name: {}", name);
+                continue;
+            }
+            let description = DescriptionGenerator::generate(&mut random, gender, &name, car);
             debug!("chosen description: {}", description);
             // make metadata
             let metadata = Metadata::new(description, name, attributes);
