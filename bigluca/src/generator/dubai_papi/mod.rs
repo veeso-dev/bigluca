@@ -61,6 +61,11 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
         if self.database.dubai_papi_hash.len() >= MAX_MINT {
             anyhow::bail!("cannot mint NFT: MAX MINT ({}) reached", MAX_MINT);
         }
+        info!(
+            "miting NFT #{}/{}",
+            self.database.dubai_papi_hash.len() + 1,
+            MAX_MINT
+        );
         for _ in 0..64 {
             let mut random = Random::default();
             // select attributes

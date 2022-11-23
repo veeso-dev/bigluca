@@ -47,9 +47,7 @@ pub fn validate_all_paths(input: TokenStream) -> TokenStream {
         syn::Fields::Named(FieldsNamed { named, .. }) => {
             for field in named.iter() {
                 let field_name = field.ident.as_ref().unwrap();
-                tokens.push(quote! {
-                    if !self.#field_name.exists() { return anyhow::bail!("pussy does not exist") }
-                });
+                tokens.push(quote! { if !self.#field_name.exists() { anyhow::bail!("field does not exist"); }});
             }
         }
         _ => panic!("struct {} does not contain named fields", ident),

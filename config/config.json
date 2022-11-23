@@ -11,21 +11,21 @@
       },
       "beard": {},
       "car": {
+        "car_color": {
+          "black": "black.png",
+          "blue": "blue.png",
+          "gray": "gray.png",
+          "green": "green.png",
+          "orange": "orange.png",
+          "pink": "pink.png",
+          "red": "red.png",
+          "white": "white.png",
+          "yellow": "yellow.png"
+        },
         "baguette": "assets/images/car/baguette",
         "lambo": "assets/images/car/lambo",
         "nikola": "assets/images/car/nikola",
         "rolls_royal": "assets/images/car/rolls_royal"
-      },
-      "car_color": {
-        "black": "black.png",
-        "blue": "blue.png",
-        "gray": "gray.png",
-        "green": "green.png",
-        "orange": "orange.png",
-        "pink": "pink.png",
-        "red": "red.png",
-        "white": "white.png",
-        "yellow": "yellow.png"
       },
       "ear_pods": {
         "black": "assets/images/car/ear_pods/black.png",
@@ -41,16 +41,18 @@
         "eyeglasses": "assets/images/car/glasses/eyeglasses.png",
         "sunglasses": "assets/images/car/glasses/sunglasses.png"
       },
-      "hair_color": {
-        "black": "black/",
-        "brown": "brown/",
-        "blonde": "blonde/",
-        "blue": "blue/",
-        "green": "green/",
-        "pink": "pink/",
-        "red": "red/"
+      "hair_style": {
+        "hair_color": {
+          "black": "black.png",
+          "brown": "brown.png",
+          "blonde": "blonde.png",
+          "blue": "blue.png",
+          "green": "green.png",
+          "pink": "pink.png",
+          "red": "red.png"
+        },
+        "bob_cut": "assets/images/hair_style/bob_cut"
       },
-      "hair_style": {},
       "hat_color": {
         "black": "assets/images/car/hat_color/black.png",
         "cyan": "assets/images/car/hat_color/cyan.png",
@@ -59,6 +61,8 @@
       },
       "skin": {
         "root": "assets/images/skin",
+        "male": "male/",
+        "female": "female/",
         "dark": "dark.png",
         "olive": "olive.png",
         "white": "white.png",
@@ -75,10 +79,6 @@
         "green_t_shirt": "assets/images/car/top/green_t_shirt.png",
         "white_t_shirt": "assets/images/car/top/white_t_shirt.png"
       }
-    },
-    "gender_roots": {
-      "male": "male/",
-      "female": "female/"
     }
   }
 }

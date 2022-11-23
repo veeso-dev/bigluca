@@ -12,7 +12,7 @@ pub trait Validate {
 }
 
 /// Bigluca configuration
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllFields, Clone, PartialEq, Deserialize)]
 pub struct Configuration {
     pub dubai_papi: DubaiPapiConfiguration,
 }
@@ -21,13 +21,6 @@ impl Configuration {
     /// Parse and load configuration from file
     pub fn parse(path: &Path) -> anyhow::Result<Self> {
         crate::utils::serde::deserialize(path)
-    }
-}
-
-impl Validate for Configuration {
-    fn validate(&self) -> anyhow::Result<()> {
-        // TODO: implement with proc mcro
-        Ok(())
     }
 }
 
