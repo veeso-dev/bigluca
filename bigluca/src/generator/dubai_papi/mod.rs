@@ -78,8 +78,6 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 None
             };
             debug!("chosen beard: {:?}", beard);
-            let head_phones = random.choice_or_none(HeadPhones::all(), 30).cloned();
-            debug!("chosen ear pods: {:?}", head_phones);
             let eyes = *random.choice(Eyes::all());
             debug!("chosen eyes: {:?}", eyes);
             let glasses = random.choice_or_none(Glasses::all(), 25).cloned();
@@ -93,6 +91,8 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen hair color: {:?}", hair_color);
             let hat_color = random.choice_or_none(HatColor::all(), 20).cloned();
             debug!("chosen hat color: {:?}", hat_color);
+            let head_phones = random.choice_or_none(HeadPhones::all(), 30).cloned();
+            debug!("chosen head phones: {:?}", head_phones);
             let mood = *random.choice(Mood::all());
             debug!("chosen mood: {:?}", mood);
             let skin = *random.choice(Skin::all());
