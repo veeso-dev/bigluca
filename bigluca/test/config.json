@@ -43,9 +43,9 @@
         "nikola": "assets/images/car/nikola",
         "rolls_royal": "assets/images/car/rolls_royal"
       },
-      "ear_pods": {
-        "black": "assets/images/car/ear_pods/black.png",
-        "white": "assets/images/car/ear_pods/white.png"
+      "head_phones": {
+        "black": "assets/images/car/head_phones/black.png",
+        "white": "assets/images/car/head_phones/white.png"
       },
       "eyes": {
         "black": "assets/images/car/eyes/black.png",

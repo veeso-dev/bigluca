@@ -5,29 +5,29 @@ use crate::{
 };
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
-pub enum EarPods {
-    Black,
-    White,
+pub enum HeadPhones {
+    EarPodsBlack,
+    EarPodsWhite,
 }
 
-impl AsAttribute for EarPods {
+impl AsAttribute for HeadPhones {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Ear Pods",
             match self {
-                Self::Black => "Black",
-                Self::White => "White",
+                Self::EarPodsBlack => "Black Ear Pods",
+                Self::EarPodsWhite => "White Ear Pods",
             },
         )
     }
 }
 
-impl AsLayer<&DubaiPapiConfiguration, ()> for EarPods {
+impl AsLayer<&DubaiPapiConfiguration, ()> for HeadPhones {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
         Layer::from_path(
             match self {
-                Self::Black => &paths.assets.ear_pods.black,
-                Self::White => &paths.assets.ear_pods.white,
+                Self::EarPodsBlack => &paths.assets.head_phones.ear_pods_black,
+                Self::EarPodsWhite => &paths.assets.head_phones.ear_pods_white,
             },
             0,
             0,
@@ -44,6 +44,9 @@ mod test {
 
     #[test]
     fn should_get_all_attributes() {
-        assert_eq!(EarPods::all(), &[EarPods::Black, EarPods::White])
+        assert_eq!(
+            HeadPhones::all(),
+            &[HeadPhones::EarPodsBlack, HeadPhones::EarPodsWhite]
+        )
     }
 }

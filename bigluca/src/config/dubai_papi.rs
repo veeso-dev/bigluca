@@ -15,7 +15,7 @@ pub struct DubaiPapiConfiguration {
 pub struct Assets {
     pub background: Background,
     pub beard: Beard,
-    pub ear_pods: EarPods,
+    pub head_phones: HeadPhones,
     pub eyes: Eyes,
     pub glasses: Glasses,
     pub hair_style: HairStyle,
@@ -77,12 +77,6 @@ impl Validate for Beard {
 
         Ok(())
     }
-}
-
-#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
-pub struct EarPods {
-    pub black: PathBuf,
-    pub white: PathBuf,
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
@@ -172,6 +166,12 @@ pub struct HatColor {
     pub cyan: PathBuf,
     pub green: PathBuf,
     pub red: PathBuf,
+}
+
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
+pub struct HeadPhones {
+    pub ear_pods_black: PathBuf,
+    pub ear_pods_white: PathBuf,
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]

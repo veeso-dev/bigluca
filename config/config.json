@@ -26,10 +26,6 @@
         "short_boxed_beard": "assets/images/duba_papi/beard/short_boxed_beard",
         "three_day_stubble_beard": "assets/images/duba_papi/beard/three_day_stubble_beard"
       },
-      "ear_pods": {
-        "black": "assets/images/duba_papi/ear_pods/black.png",
-        "white": "assets/images/duba_papi/ear_pods/white.png"
-      },
       "eyes": {
         "black": "assets/images/duba_papi/eyes/black.png",
         "blue": "assets/images/duba_papi/eyes/blue.png",
@@ -67,6 +63,10 @@
         "cyan": "assets/images/duba_papi/hat_color/cyan.png",
         "green": "assets/images/duba_papi/hat_color/green.png",
         "red": "assets/images/duba_papi/hat_color/red.png"
+      },
+      "head_phones": {
+        "ear_pods_black": "assets/images/duba_papi/head_phones/ear_pods_black.png",
+        "ear_pods_white": "assets/images/duba_papi/head_phones/ear_pods_white.png"
       },
       "mood": {
         "angry": "assets/images/duba_papi/mood/angry.png",
