@@ -15,12 +15,12 @@ pub struct DubaiPapiConfiguration {
 pub struct Assets {
     pub background: Background,
     pub beard: Beard,
-    pub car: Car,
     pub ear_pods: EarPods,
     pub eyes: Eyes,
     pub glasses: Glasses,
     pub hair_style: HairStyle,
     pub hat_color: HatColor,
+    pub mood: Mood,
     pub skin: Skin,
     pub top: Top,
 }
@@ -75,55 +75,6 @@ impl Validate for Beard {
             }
         }
 
-        Ok(())
-    }
-}
-
-#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
-pub struct CarColor {
-    pub black: PathBuf,
-    pub blue: PathBuf,
-    pub gray: PathBuf,
-    pub green: PathBuf,
-    pub orange: PathBuf,
-    pub pink: PathBuf,
-    pub red: PathBuf,
-    pub white: PathBuf,
-    pub yellow: PathBuf,
-}
-
-#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
-pub struct Car {
-    pub car_color: CarColor,
-    pub baguette: PathBuf,
-    pub lambo: PathBuf,
-    pub nikola: PathBuf,
-    pub rolls_royal: PathBuf,
-}
-
-impl Validate for Car {
-    fn validate(&self) -> anyhow::Result<()> {
-        let colors = &[
-            &self.car_color.black,
-            &self.car_color.blue,
-            &self.car_color.gray,
-            &self.car_color.green,
-            &self.car_color.orange,
-            &self.car_color.pink,
-            &self.car_color.red,
-            &self.car_color.white,
-            &self.car_color.yellow,
-        ];
-        let cars = &[&self.baguette, &self.lambo, &self.nikola, &self.rolls_royal];
-        for car in cars {
-            for color in colors {
-                let mut path = car.to_path_buf();
-                path.push(color);
-                if !path.exists() {
-                    anyhow::bail!("car {} doesn't exist", path.display());
-                }
-            }
-        }
         Ok(())
     }
 }
@@ -223,40 +174,20 @@ pub struct HatColor {
     pub red: PathBuf,
 }
 
-#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
+pub struct Mood {
+    pub angry: PathBuf,
+    pub happy: PathBuf,
+    pub neutral: PathBuf,
+    pub sad: PathBuf,
+}
+
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct Skin {
-    pub root: PathBuf,
-    pub male: PathBuf,
-    pub female: PathBuf,
     pub dark: PathBuf,
     pub olive: PathBuf,
     pub white: PathBuf,
     pub asian: PathBuf,
-}
-
-impl Validate for Skin {
-    fn validate(&self) -> anyhow::Result<()> {
-        let skins = &[&self.dark, &self.olive, &self.white, &self.asian];
-        let mut male_root = self.root.clone();
-        male_root.extend(&self.male);
-        let mut female_root = self.root.clone();
-        female_root.extend(&self.female);
-        // check skins
-        for skin in skins {
-            let mut male_path = male_root.to_path_buf();
-            male_path.push(skin);
-            let mut female_path = female_root.to_path_buf();
-            female_path.push(skin);
-            if !male_path.exists() {
-                anyhow::bail!("{} male skin not found", male_path.display());
-            }
-            if !female_path.exists() {
-                anyhow::bail!("{} female skin not found", female_path.display());
-            }
-        }
-
-        Ok(())
-    }
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]

@@ -59,7 +59,7 @@ impl AsAttribute for Beard {
 
 impl AsLayer<&DubaiPapiConfiguration, HairColor> for Beard {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, states: HairColor) -> anyhow::Result<Layer> {
-        Layer::from_path(&self.path(paths, states), 150, 40)
+        Layer::from_path(&self.path(paths, states), 0, 0)
     }
 }
 

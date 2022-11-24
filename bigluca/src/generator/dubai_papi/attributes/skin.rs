@@ -1,4 +1,3 @@
-use super::Gender;
 use crate::{
     config::DubaiPapiConfiguration,
     nft::{AsAttribute, Attribute},
@@ -16,19 +15,14 @@ pub enum Skin {
 }
 
 impl Skin {
-    fn path(&self, config: &DubaiPapiConfiguration, gender: Gender) -> PathBuf {
-        let mut p = match gender {
-            Gender::Male => config.assets.skin.male.clone(),
-            Gender::Female => config.assets.skin.female.clone(),
-        };
-        p.extend(match self {
+    fn path(&self, config: &DubaiPapiConfiguration) -> PathBuf {
+        match self {
             Self::Dark => &config.assets.skin.dark,
             Self::Olive => &config.assets.skin.olive,
             Self::White => &config.assets.skin.white,
             Self::Asian => &config.assets.skin.white,
-        });
-
-        p
+        }
+        .to_path_buf()
     }
 }
 
@@ -46,9 +40,9 @@ impl AsAttribute for Skin {
     }
 }
 
-impl AsLayer<&DubaiPapiConfiguration, Gender> for Skin {
-    fn as_layer(&self, paths: &DubaiPapiConfiguration, states: Gender) -> anyhow::Result<Layer> {
-        Layer::from_path(&self.path(paths, states), 96, 24)
+impl AsLayer<&DubaiPapiConfiguration, ()> for Skin {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
+        Layer::from_path(&self.path(paths), 96, 24)
     }
 }
 

@@ -35,8 +35,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for HatColor {
                 Self::Green => &paths.assets.hat_color.green,
                 Self::Red => &paths.assets.hat_color.red,
             },
-            140,
-            36,
+            0,
+            0,
         )
     }
 }

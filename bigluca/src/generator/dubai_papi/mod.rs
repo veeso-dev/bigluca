@@ -6,15 +6,14 @@ mod attributes;
 mod description;
 
 use self::attributes::{
-    Background, Beard, Car, CarColor, EarPods, Eyes, Gender, Glasses, HairColor, HairStyle,
-    HatColor, Skin, Top,
+    Background, Beard, EarPods, Eyes, Gender, Glasses, HairColor, HairStyle, HatColor, Skin, Top,
 };
 
 use super::GenerateNft;
 use crate::{
     config::DubaiPapiConfiguration,
     database::{names, nft::NftDatabase},
-    generator::dubai_papi::description::DescriptionGenerator,
+    generator::dubai_papi::{attributes::Mood, description::DescriptionGenerator},
     nft::{AsAttribute, Attribute as NftAttribute, Metadata, Nft},
     render::{AsLayer, Layer, RenderEngine},
     utils::{collisions::try_for, random::Random},
@@ -79,14 +78,6 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 None
             };
             debug!("chosen beard: {:?}", beard);
-            let car = random.choice_or_none(Car::all(), 50).cloned();
-            debug!("chosen car: {:?}", car);
-            let car_color = if car.is_some() {
-                Some(*random.choice(CarColor::all()))
-            } else {
-                None
-            };
-            debug!("chosen car color: {:?}", car_color);
             let ear_pods = random.choice_or_none(EarPods::all(), 30).cloned();
             debug!("chosen ear pods: {:?}", ear_pods);
             let eyes = *random.choice(Eyes::all());
@@ -102,6 +93,8 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen hair color: {:?}", hair_color);
             let hat_color = random.choice_or_none(HatColor::all(), 20).cloned();
             debug!("chosen hat color: {:?}", hat_color);
+            let mood = *random.choice(Mood::all());
+            debug!("chosen mood: {:?}", mood);
             let skin = *random.choice(Skin::all());
             debug!("chosen skin: {:?}", skin);
             let top = *random.choice(Top::all());
@@ -111,8 +104,6 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             let attributes: Vec<NftAttribute> = vec![
                 Some(background.as_attribute()),
                 beard.map(|x| x.as_attribute()),
-                car.map(|x| x.as_attribute()),
-                car_color.map(|x| x.as_attribute()),
                 ear_pods.map(|x| x.as_attribute()),
                 Some(eyes.as_attribute()),
                 Some(gender.as_attribute()),
@@ -120,6 +111,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 Some(hair_color.as_attribute()),
                 Some(hair_style.as_attribute()),
                 hat_color.map(|x| x.as_attribute()),
+                Some(mood.as_attribute()),
                 Some(skin.as_attribute()),
                 Some(top.as_attribute()),
             ]
@@ -134,7 +126,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 error!("collision detected with name: {}", name);
                 continue;
             }
-            let description = DescriptionGenerator::generate(&mut random, gender, &name, car);
+            let description = DescriptionGenerator::generate(&mut random, gender, &name);
             debug!("chosen description: {}", description);
             // make metadata
             let metadata = Metadata::new(description, name, attributes);

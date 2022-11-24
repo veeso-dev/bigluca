@@ -2,22 +2,18 @@
 
 use crate::utils::random::Random;
 
-use super::attributes::{Car, Gender};
+use super::attributes::Gender;
 
 pub struct DescriptionGenerator;
 
 impl DescriptionGenerator {
-    pub fn generate(random: &mut Random, gender: Gender, name: &str, car: Option<Car>) -> String {
+    pub fn generate(random: &mut Random, gender: Gender, name: &str) -> String {
         let (subject, personal, possessive) = Self::pronouns(gender);
         // formulae: {name} started {his/her} activity of {START_ACTIVITY} and has become {CAPITAL} {ACTION} {OBJECTS}.
-        // {he/she} currently lives in Dubai. In the weekend you can find {him/her} (driving {his/her} {car} and)? {hobby}.
-        let car_string = match car {
-            None => String::default(),
-            Some(car) => format!("driving {} {:?} and ", possessive, car),
-        };
+        // {he/she} currently lives in Dubai. In the weekend you can find {him/her} {hobby}.
         let action = *random.choice(Action::all());
         format!(
-            "{} started {} activity of {} and has become {} {} {}. {} currently lives in Dubai. In the weekend you can find {} {}{}.",
+            "{} started {} activity of {} and has become {} {} {}. {} currently lives in Dubai. In the weekend you can find {} {}.",
             name,
             possessive,
             random.choice(START_ACTIVITY),
@@ -26,7 +22,6 @@ impl DescriptionGenerator {
             random.choice(action.objects()),
             subject,
             personal,
-            car_string,
             random.choice(HOBBY),
         )
     }

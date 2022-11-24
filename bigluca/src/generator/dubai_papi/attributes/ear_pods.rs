@@ -29,8 +29,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for EarPods {
                 Self::Black => &paths.assets.ear_pods.black,
                 Self::White => &paths.assets.ear_pods.white,
             },
-            128,
-            64,
+            0,
+            0,
         )
     }
 }

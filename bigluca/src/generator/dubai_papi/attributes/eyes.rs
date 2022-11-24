@@ -35,8 +35,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for Eyes {
                 Self::Brown => &paths.assets.eyes.brown,
                 Self::Green => &paths.assets.eyes.green,
             },
-            128,
-            48,
+            0,
+            0,
         )
     }
 }

@@ -53,8 +53,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for Top {
                 Self::RedTShirt => &paths.assets.top.red_t_shirt,
                 Self::WhiteTShirt => &paths.assets.top.white_t_shirt,
             },
-            96,
-            280,
+            0,
+            0,
         )
     }
 }
