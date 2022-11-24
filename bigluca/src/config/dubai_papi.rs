@@ -5,13 +5,13 @@ use super::Validate;
 use std::path::PathBuf;
 
 /// Dubai papi generator configuration
-#[derive(Debug, ValidateAllFields, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllFields, Clone, Eq, PartialEq, Deserialize)]
 pub struct DubaiPapiConfiguration {
     pub assets: Assets,
 }
 
 /// Assets configuration
-#[derive(Debug, ValidateAllFields, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllFields, Clone, Eq, PartialEq, Deserialize)]
 pub struct Assets {
     pub background: Background,
     pub beard: Beard,
@@ -25,7 +25,7 @@ pub struct Assets {
     pub top: Top,
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct Background {
     pub burj_al_arab: PathBuf,
     pub burj_khalifa: PathBuf,
@@ -35,10 +35,51 @@ pub struct Background {
     pub skyline_night: PathBuf,
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
-pub struct Beard {}
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
+pub struct Beard {
+    pub hair_color: HairColor,
+    pub chevron: PathBuf,
+    pub chin_strip: PathBuf,
+    pub circle_beard: PathBuf,
+    pub royale_beard: PathBuf,
+    pub short_boxed_beard: PathBuf,
+    pub three_day_stubble_beard: PathBuf,
+}
 
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+impl Validate for Beard {
+    fn validate(&self) -> anyhow::Result<()> {
+        let colors = &[
+            &self.hair_color.black,
+            &self.hair_color.brown,
+            &self.hair_color.blonde,
+            &self.hair_color.blue,
+            &self.hair_color.green,
+            &self.hair_color.pink,
+            &self.hair_color.red,
+        ];
+        let beard_styles = &[
+            &self.chevron,
+            &self.chin_strip,
+            &self.circle_beard,
+            &self.royale_beard,
+            &self.short_boxed_beard,
+            &self.three_day_stubble_beard,
+        ];
+        for style in beard_styles {
+            for color in colors {
+                let mut path = style.to_path_buf();
+                path.push(color);
+                if !path.exists() {
+                    anyhow::bail!("{} beard style not found", path.display());
+                }
+            }
+        }
+
+        Ok(())
+    }
+}
+
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct CarColor {
     pub black: PathBuf,
     pub blue: PathBuf,
@@ -51,7 +92,7 @@ pub struct CarColor {
     pub yellow: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct Car {
     pub car_color: CarColor,
     pub baguette: PathBuf,
@@ -87,13 +128,13 @@ impl Validate for Car {
     }
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct EarPods {
     pub black: PathBuf,
     pub white: PathBuf,
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct Eyes {
     pub black: PathBuf,
     pub blue: PathBuf,
@@ -101,13 +142,13 @@ pub struct Eyes {
     pub green: PathBuf,
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct Glasses {
     pub eyeglasses: PathBuf,
     pub sunglasses: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct HairColor {
     pub black: PathBuf,
     pub brown: PathBuf,
@@ -118,11 +159,20 @@ pub struct HairColor {
     pub red: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct HairStyle {
     pub hair_color: HairColor,
+    pub bob: PathBuf,
+    pub curly: PathBuf,
+    pub long: PathBuf,
+    pub pony_tail: PathBuf,
     pub bald: PathBuf,
-    pub bob_cut: PathBuf,
+    pub bun: PathBuf,
+    pub buzz: PathBuf,
+    pub ivy_league: PathBuf,
+    pub long_top_short_sides: PathBuf,
+    pub pixie: PathBuf,
+    pub taper: PathBuf,
 }
 
 impl Validate for HairStyle {
@@ -139,7 +189,18 @@ impl Validate for HairStyle {
             &self.hair_color.pink,
             &self.hair_color.red,
         ];
-        let hair_styles = &[&self.bob_cut];
+        let hair_styles = &[
+            &self.bob,
+            &self.curly,
+            &self.long,
+            &self.pony_tail,
+            &self.bun,
+            &self.buzz,
+            &self.ivy_league,
+            &self.long_top_short_sides,
+            &self.pixie,
+            &self.taper,
+        ];
         for style in hair_styles {
             for color in colors {
                 let mut path = style.to_path_buf();
@@ -154,7 +215,7 @@ impl Validate for HairStyle {
     }
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct HatColor {
     pub black: PathBuf,
     pub cyan: PathBuf,
@@ -162,7 +223,7 @@ pub struct HatColor {
     pub red: PathBuf,
 }
 
-#[derive(Debug, Clone, PartialEq, Deserialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct Skin {
     pub root: PathBuf,
     pub male: PathBuf,
@@ -198,7 +259,7 @@ impl Validate for Skin {
     }
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, PartialEq, Deserialize)]
+#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
 pub struct Top {
     pub black_jacket: PathBuf,
     pub blue_jacket: PathBuf,

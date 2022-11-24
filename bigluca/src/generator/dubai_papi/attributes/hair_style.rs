@@ -3,21 +3,57 @@ use std::path::PathBuf;
 use super::HairColor;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
-#[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum HairStyle {
+    // female styles
+    Bob,
+    Curly,
+    Long,
+    PonyTail,
+    // male styles
     Bald,
-    BobCut,
+    Bun,
+    Buzz,
+    IvyLeague,
+    LongTopShortSides,
+    Pixie,
+    Taper,
 }
 
 impl HairStyle {
+    pub fn female() -> &'static [Self] {
+        &[Self::Bob, Self::Curly, Self::Long, Self::PonyTail]
+    }
+
+    pub fn male() -> &'static [Self] {
+        &[
+            Self::Bald,
+            Self::Bun,
+            Self::Buzz,
+            Self::IvyLeague,
+            Self::LongTopShortSides,
+            Self::Pixie,
+            Self::Taper,
+        ]
+    }
+
     fn path(&self, paths: &DubaiPapiConfiguration, color: HairColor) -> PathBuf {
         let mut path = match self {
             Self::Bald => return paths.assets.hair_style.bald.clone(),
-            Self::BobCut => &paths.assets.hair_style.bob_cut,
+            Self::Bob => &paths.assets.hair_style.bob,
+            Self::Curly => &paths.assets.hair_style.curly,
+            Self::Long => &paths.assets.hair_style.long,
+            Self::PonyTail => &paths.assets.hair_style.pony_tail,
+            Self::Bun => &paths.assets.hair_style.bun,
+            Self::Buzz => &paths.assets.hair_style.buzz,
+            Self::IvyLeague => &paths.assets.hair_style.ivy_league,
+            Self::LongTopShortSides => &paths.assets.hair_style.long_top_short_sides,
+            Self::Pixie => &paths.assets.hair_style.pixie,
+            Self::Taper => &paths.assets.hair_style.taper,
         }
         .to_path_buf();
         path.push(match color {
@@ -33,13 +69,22 @@ impl HairStyle {
     }
 }
 
-impl IntoAttribute for HairStyle {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for HairStyle {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Hair Style",
             match self {
+                Self::Bob => "Bob",
+                Self::Curly => "Curly",
+                Self::Long => "Long",
+                Self::PonyTail => "Pony Tail",
                 Self::Bald => "Bald",
-                Self::BobCut => "Bob Cut",
+                Self::Bun => "Bun",
+                Self::Buzz => "Buzz",
+                Self::IvyLeague => "Ivy League",
+                Self::LongTopShortSides => "Long Top Short Sides",
+                Self::Pixie => "Pixie",
+                Self::Taper => "Taper",
             },
         )
     }
@@ -60,6 +105,26 @@ mod test {
 
     #[test]
     fn should_get_all_attributes() {
-        assert_eq!(HairStyle::all(), &[HairStyle::Bald, HairStyle::BobCut])
+        assert_eq!(
+            HairStyle::female(),
+            &[
+                HairStyle::Bob,
+                HairStyle::Curly,
+                HairStyle::Long,
+                HairStyle::PonyTail,
+            ]
+        );
+        assert_eq!(
+            HairStyle::male(),
+            &[
+                HairStyle::Bald,
+                HairStyle::Bun,
+                HairStyle::Buzz,
+                HairStyle::IvyLeague,
+                HairStyle::LongTopShortSides,
+                HairStyle::Pixie,
+                HairStyle::Taper,
+            ]
+        );
     }
 }

@@ -1,6 +1,6 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -12,8 +12,8 @@ pub enum HatColor {
     Red,
 }
 
-impl IntoAttribute for HatColor {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for HatColor {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Hat Color",
             match self {

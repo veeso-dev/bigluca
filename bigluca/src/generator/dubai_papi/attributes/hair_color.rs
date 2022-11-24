@@ -1,4 +1,4 @@
-use crate::nft::{Attribute, IntoAttribute};
+use crate::nft::{AsAttribute, Attribute};
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum HairColor {
@@ -11,8 +11,8 @@ pub enum HairColor {
     Red,
 }
 
-impl IntoAttribute for HairColor {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for HairColor {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Hair Color",
             match self {

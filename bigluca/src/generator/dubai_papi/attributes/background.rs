@@ -1,6 +1,6 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -14,8 +14,8 @@ pub enum Background {
     SkylineByNight,
 }
 
-impl IntoAttribute for Background {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for Background {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Background",
             match self {

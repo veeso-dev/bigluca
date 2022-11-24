@@ -1,7 +1,7 @@
 use super::Gender;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -32,8 +32,8 @@ impl Skin {
     }
 }
 
-impl IntoAttribute for Skin {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for Skin {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Skin",
             match self {

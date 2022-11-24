@@ -1,6 +1,6 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -12,8 +12,8 @@ pub enum Eyes {
     Green,
 }
 
-impl IntoAttribute for Eyes {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for Eyes {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Eyes",
             match self {

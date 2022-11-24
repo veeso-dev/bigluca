@@ -15,7 +15,7 @@ use crate::{
     config::DubaiPapiConfiguration,
     database::{names, nft::NftDatabase},
     generator::dubai_papi::description::DescriptionGenerator,
-    nft::{Attribute as NftAttribute, IntoAttribute, Metadata, Nft},
+    nft::{AsAttribute, Attribute as NftAttribute, Metadata, Nft},
     render::{AsLayer, Layer, RenderEngine},
     utils::{collisions::try_for, random::Random},
 };
@@ -94,8 +94,8 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             let glasses = random.choice_or_none(Glasses::all(), 25).cloned();
             debug!("chosen glasses: {:?}", glasses);
             let hair_style = *random.choice(match gender {
-                Gender::Male => &[HairStyle::Bald],
-                Gender::Female => &[HairStyle::BobCut],
+                Gender::Female => HairStyle::female(),
+                Gender::Male => HairStyle::male(),
             });
             debug!("chosen hair style: {:?}", hair_style);
             let hair_color = *random.choice(HairColor::all());
@@ -109,19 +109,19 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
 
             // make attributes
             let attributes: Vec<NftAttribute> = vec![
-                Some(background.into_attribute()),
-                beard.map(|x| x.into_attribute()),
-                car.map(|x| x.into_attribute()),
-                car_color.map(|x| x.into_attribute()),
-                ear_pods.map(|x| x.into_attribute()),
-                Some(eyes.into_attribute()),
-                Some(gender.into_attribute()),
-                glasses.map(|x| x.into_attribute()),
-                Some(hair_color.into_attribute()),
-                Some(hair_style.into_attribute()),
-                hat_color.map(|x| x.into_attribute()),
-                Some(skin.into_attribute()),
-                Some(top.into_attribute()),
+                Some(background.as_attribute()),
+                beard.map(|x| x.as_attribute()),
+                car.map(|x| x.as_attribute()),
+                car_color.map(|x| x.as_attribute()),
+                ear_pods.map(|x| x.as_attribute()),
+                Some(eyes.as_attribute()),
+                Some(gender.as_attribute()),
+                glasses.map(|x| x.as_attribute()),
+                Some(hair_color.as_attribute()),
+                Some(hair_style.as_attribute()),
+                hat_color.map(|x| x.as_attribute()),
+                Some(skin.as_attribute()),
+                Some(top.as_attribute()),
             ]
             .into_iter()
             .flatten()

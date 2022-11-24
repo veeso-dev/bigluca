@@ -1,6 +1,6 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -10,8 +10,8 @@ pub enum EarPods {
     White,
 }
 
-impl IntoAttribute for EarPods {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for EarPods {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Ear Pods",
             match self {

@@ -3,7 +3,7 @@ use std::path::PathBuf;
 use super::CarColor;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{Attribute, IntoAttribute},
+    nft::{AsAttribute, Attribute},
     render::{AsLayer, Layer},
 };
 
@@ -40,8 +40,8 @@ impl Car {
     }
 }
 
-impl IntoAttribute for Car {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for Car {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new(
             "Car",
             match self {

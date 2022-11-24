@@ -5,7 +5,7 @@
 use std::path::Path;
 
 /// NFT database
-#[derive(Debug, Default, Clone, PartialEq, Deserialize, Serialize)]
+#[derive(Debug, Default, Clone, Eq, PartialEq, Deserialize, Serialize)]
 pub struct NftDatabase {
     /// Hash for dubai papi NFTs already recorded
     pub dubai_papi_hash: Vec<String>,

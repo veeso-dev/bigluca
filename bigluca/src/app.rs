@@ -95,7 +95,7 @@ impl Drop for App {
         } else {
             error!("Minting was unsuccesful; removing all generated files...");
             for path in self.created_files.iter() {
-                match fs::remove_file(&path) {
+                match fs::remove_file(path) {
                     Ok(()) => debug!("removed file {}", path.display()),
                     Err(e) => error!("failed to remove file {}: {}", path.display(), e),
                 }

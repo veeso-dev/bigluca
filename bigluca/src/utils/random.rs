@@ -2,7 +2,9 @@
 //!
 //! Random utilities
 
-use rand::{distributions::Alphanumeric, rngs::ThreadRng, thread_rng, Rng};
+#[cfg(test)]
+use rand::distributions::Alphanumeric;
+use rand::{rngs::ThreadRng, thread_rng, Rng};
 
 pub struct Random {
     rng: ThreadRng,
@@ -41,6 +43,7 @@ impl Random {
         self.rng.gen_range(0..100) < probability
     }
 
+    #[cfg(test)]
     /// Generate a random alphanumeric string with provided length
     pub fn random_alphanumeric_with_len(&mut self, len: usize) -> String {
         std::iter::repeat(())

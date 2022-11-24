@@ -1,6 +1,6 @@
 //! # Collection
 
-use crate::nft::{Attribute, IntoAttribute};
+use crate::nft::{AsAttribute, Attribute};
 
 use std::str::FromStr;
 
@@ -32,8 +32,8 @@ impl ToString for Collection {
     }
 }
 
-impl IntoAttribute for Collection {
-    fn into_attribute(&self) -> Attribute {
+impl AsAttribute for Collection {
+    fn as_attribute(&self) -> Attribute {
         Attribute::new("Collection", self.to_string())
     }
 }
@@ -61,7 +61,7 @@ mod test {
     #[test]
     fn should_convert_collection_to_attribute() {
         assert_eq!(
-            Collection::DubaiPapi.into_attribute(),
+            Collection::DubaiPapi.as_attribute(),
             Attribute::new("Collection", "Dubai Papi")
         );
     }
