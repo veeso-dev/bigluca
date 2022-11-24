@@ -51,6 +51,7 @@
           "pink": "pink.png",
           "red": "red.png"
         },
+        "bald": "assets/images/hair_style/bald.png",
         "bob_cut": "assets/images/hair_style/bob_cut"
       },
       "hat_color": {
@@ -74,6 +75,7 @@
         "shirt": "assets/images/car/top/shirt.png",
         "tank_top": "assets/images/car/top/tank_top.png",
         "black_t_shirt": "assets/images/car/top/black_t_shirt.png",
+        "blue_t_shirt": "assets/images/car/top/blue_t_shirt.png",
         "orange_t_shirt": "assets/images/car/top/orange_t_shirt.png",
         "red_t_shirt": "assets/images/car/top/red_t_shirt.png",
         "green_t_shirt": "assets/images/car/top/green_t_shirt.png",

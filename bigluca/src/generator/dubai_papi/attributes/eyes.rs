@@ -1,4 +1,8 @@
-use crate::nft::{Attribute, IntoAttribute};
+use crate::{
+    config::DubaiPapiConfiguration,
+    nft::{Attribute, IntoAttribute},
+    render::{AsLayer, Layer},
+};
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Eyes {
@@ -18,6 +22,21 @@ impl IntoAttribute for Eyes {
                 Self::Brown => "Brown",
                 Self::Green => "Green",
             },
+        )
+    }
+}
+
+impl AsLayer<&DubaiPapiConfiguration, ()> for Eyes {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
+        Layer::from_path(
+            match self {
+                Self::Black => &paths.assets.eyes.black,
+                Self::Blue => &paths.assets.eyes.blue,
+                Self::Brown => &paths.assets.eyes.brown,
+                Self::Green => &paths.assets.eyes.green,
+            },
+            128,
+            48,
         )
     }
 }

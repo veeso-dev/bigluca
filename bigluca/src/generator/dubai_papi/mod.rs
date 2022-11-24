@@ -148,7 +148,6 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
 
             let layers: Vec<Layer> = vec![background.as_layer(self.config, ())?]
                 .into_iter()
-                .flatten()
                 .collect();
             let image = RenderEngine::render(350, 350, layers)?;
             // push changes to database

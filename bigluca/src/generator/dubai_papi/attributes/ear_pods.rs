@@ -1,4 +1,8 @@
-use crate::nft::{Attribute, IntoAttribute};
+use crate::{
+    config::DubaiPapiConfiguration,
+    nft::{Attribute, IntoAttribute},
+    render::{AsLayer, Layer},
+};
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum EarPods {
@@ -14,6 +18,19 @@ impl IntoAttribute for EarPods {
                 Self::Black => "Black",
                 Self::White => "White",
             },
+        )
+    }
+}
+
+impl AsLayer<&DubaiPapiConfiguration, ()> for EarPods {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
+        Layer::from_path(
+            match self {
+                Self::Black => &paths.assets.ear_pods.black,
+                Self::White => &paths.assets.ear_pods.white,
+            },
+            128,
+            64,
         )
     }
 }

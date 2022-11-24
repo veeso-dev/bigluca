@@ -2,7 +2,9 @@ use super::Gender;
 use crate::{
     config::DubaiPapiConfiguration,
     nft::{Attribute, IntoAttribute},
+    render::{AsLayer, Layer},
 };
+
 use std::path::PathBuf;
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
@@ -41,6 +43,12 @@ impl IntoAttribute for Skin {
                 Self::Asian => "Asian",
             },
         )
+    }
+}
+
+impl AsLayer<&DubaiPapiConfiguration, Gender> for Skin {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, states: Gender) -> anyhow::Result<Layer> {
+        Layer::from_path(&self.path(paths, states), 96, 24)
     }
 }
 

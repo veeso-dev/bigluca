@@ -121,11 +121,15 @@ pub struct HairColor {
 #[derive(Debug, Clone, PartialEq, Deserialize)]
 pub struct HairStyle {
     pub hair_color: HairColor,
+    pub bald: PathBuf,
     pub bob_cut: PathBuf,
 }
 
 impl Validate for HairStyle {
     fn validate(&self) -> anyhow::Result<()> {
+        if !self.bald.exists() {
+            anyhow::bail!("bald path {} doesn't exist", self.bald.display());
+        }
         let colors = &[
             &self.hair_color.black,
             &self.hair_color.brown,
@@ -201,6 +205,7 @@ pub struct Top {
     pub shirt: PathBuf,
     pub tank_top: PathBuf,
     pub black_t_shirt: PathBuf,
+    pub blue_t_shirt: PathBuf,
     pub orange_t_shirt: PathBuf,
     pub red_t_shirt: PathBuf,
     pub green_t_shirt: PathBuf,

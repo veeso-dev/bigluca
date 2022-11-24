@@ -35,7 +35,7 @@ impl Layer {
 /// image rendering.
 /// The `paths` entity can be used to retrieve paths for the provided entity
 pub trait AsLayer<T, U> {
-    fn as_layer(&self, paths: T, states: U) -> anyhow::Result<Option<Layer>>;
+    fn as_layer(&self, paths: T, states: U) -> anyhow::Result<Layer>;
 }
 
 #[cfg(test)]

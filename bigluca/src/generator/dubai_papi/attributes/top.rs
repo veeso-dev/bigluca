@@ -1,4 +1,8 @@
-use crate::nft::{Attribute, IntoAttribute};
+use crate::{
+    config::DubaiPapiConfiguration,
+    nft::{Attribute, IntoAttribute},
+    render::{AsLayer, Layer},
+};
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Top {
@@ -30,6 +34,27 @@ impl IntoAttribute for Top {
                 Self::RedTShirt => "Red T-Shirt",
                 Self::WhiteTShirt => "White T-Shirt",
             },
+        )
+    }
+}
+
+impl AsLayer<&DubaiPapiConfiguration, ()> for Top {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
+        Layer::from_path(
+            match self {
+                Self::BlackJacket => &paths.assets.top.black_jacket,
+                Self::BlueJacket => &paths.assets.top.blue_jacket,
+                Self::Shirt => &paths.assets.top.shirt,
+                Self::TankTop => &paths.assets.top.tank_top,
+                Self::BlackTShirt => &paths.assets.top.black_t_shirt,
+                Self::BlueTShirt => &paths.assets.top.blue_t_shirt,
+                Self::GreenTShirt => &paths.assets.top.green_t_shirt,
+                Self::OrangeTShirt => &paths.assets.top.orange_t_shirt,
+                Self::RedTShirt => &paths.assets.top.red_t_shirt,
+                Self::WhiteTShirt => &paths.assets.top.white_t_shirt,
+            },
+            96,
+            280,
         )
     }
 }

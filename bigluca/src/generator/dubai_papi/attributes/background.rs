@@ -31,11 +31,7 @@ impl IntoAttribute for Background {
 }
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Background {
-    fn as_layer(
-        &self,
-        paths: &DubaiPapiConfiguration,
-        _states: (),
-    ) -> anyhow::Result<Option<Layer>> {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
         Layer::from_path(
             match self {
                 Self::BurjAlArab => &paths.assets.background.burj_al_arab,
@@ -48,7 +44,6 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for Background {
             0,
             0,
         )
-        .map(Option::Some)
     }
 }
 
