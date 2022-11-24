@@ -4,8 +4,6 @@ use crate::nft::{AsAttribute, Attribute};
 
 use std::str::FromStr;
 
-const DUBAI_PAPI: &str = "dubai-papi";
-
 /// Defines collection name. Each collection should have this attribute
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Collection {
@@ -17,7 +15,7 @@ impl FromStr for Collection {
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
-            DUBAI_PAPI => Ok(Self::DubaiPapi),
+            "dubai-papi" | "dubaipapi" | "dubai_papi" => Ok(Self::DubaiPapi),
             collection => anyhow::bail!("unknown collection {}", collection),
         }
     }
