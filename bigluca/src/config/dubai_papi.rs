@@ -172,6 +172,8 @@ pub struct HatColor {
 pub struct HeadPhones {
     pub ear_pods_black: PathBuf,
     pub ear_pods_white: PathBuf,
+    pub head_phones_black: PathBuf,
+    pub head_phones_white: PathBuf,
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]

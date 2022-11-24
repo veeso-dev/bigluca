@@ -8,6 +8,8 @@ use crate::{
 pub enum HeadPhones {
     EarPodsBlack,
     EarPodsWhite,
+    HeadPhonesBlack,
+    HeadPhonesWhite,
 }
 
 impl AsAttribute for HeadPhones {
@@ -17,6 +19,8 @@ impl AsAttribute for HeadPhones {
             match self {
                 Self::EarPodsBlack => "Black Ear Pods",
                 Self::EarPodsWhite => "White Ear Pods",
+                Self::HeadPhonesBlack => "Black Head Phones",
+                Self::HeadPhonesWhite => "White Head Phones",
             },
         )
     }
@@ -28,6 +32,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for HeadPhones {
             match self {
                 Self::EarPodsBlack => &paths.assets.head_phones.ear_pods_black,
                 Self::EarPodsWhite => &paths.assets.head_phones.ear_pods_white,
+                Self::HeadPhonesBlack => &paths.assets.head_phones.head_phones_black,
+                Self::HeadPhonesWhite => &paths.assets.head_phones.head_phones_white,
             },
             0,
             0,
@@ -46,7 +52,12 @@ mod test {
     fn should_get_all_attributes() {
         assert_eq!(
             HeadPhones::all(),
-            &[HeadPhones::EarPodsBlack, HeadPhones::EarPodsWhite]
+            &[
+                HeadPhones::EarPodsBlack,
+                HeadPhones::EarPodsWhite,
+                HeadPhones::HeadPhonesBlack,
+                HeadPhones::HeadPhonesWhite
+            ]
         )
     }
 }
