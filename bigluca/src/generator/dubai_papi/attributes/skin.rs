@@ -6,6 +6,8 @@ use crate::{
 
 use std::path::PathBuf;
 
+use super::Gender;
+
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Skin {
     Dark,
@@ -15,14 +17,19 @@ pub enum Skin {
 }
 
 impl Skin {
-    fn path(&self, config: &DubaiPapiConfiguration) -> PathBuf {
-        match self {
+    fn path(&self, config: &DubaiPapiConfiguration, gender: Gender) -> PathBuf {
+        let mut p = match gender {
+            Gender::Male => config.assets.skin.male.clone(),
+            Gender::Female => config.assets.skin.female.clone(),
+        };
+        p.extend(match self {
             Self::Dark => &config.assets.skin.dark,
             Self::Olive => &config.assets.skin.olive,
             Self::White => &config.assets.skin.white,
             Self::Asian => &config.assets.skin.asian,
-        }
-        .to_path_buf()
+        });
+
+        p
     }
 }
 
@@ -40,9 +47,9 @@ impl AsAttribute for Skin {
     }
 }
 
-impl AsLayer<&DubaiPapiConfiguration, ()> for Skin {
-    fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(&self.path(paths))
+impl AsLayer<&DubaiPapiConfiguration, Gender> for Skin {
+    fn as_layer(&self, paths: &DubaiPapiConfiguration, states: Gender) -> anyhow::Result<Layer> {
+        Layer::from_path(&self.path(paths, states))
     }
 }
 

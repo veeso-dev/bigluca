@@ -77,10 +77,12 @@
         "sad": "assets/images/dubai_papi/mood/sad.png"
       },
       "skin": {
-        "dark": "assets/images/dubai_papi/skin/dark.png",
-        "olive": "assets/images/dubai_papi/skin/olive.png",
-        "white": "assets/images/dubai_papi/skin/white.png",
-        "asian": "assets/images/dubai_papi/skin/asian.png"
+        "female": "assets/images/dubai_papi/skin/female",
+        "male": "assets/images/dubai_papi/skin/male",
+        "dark": "dark.png",
+        "olive": "olive.png",
+        "white": "white.png",
+        "asian": "asian.png"
       },
       "top": {
         "black_jacket": "assets/images/dubai_papi/top/black_jacket.png",

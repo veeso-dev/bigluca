@@ -181,12 +181,37 @@ pub struct Mood {
     pub sad: PathBuf,
 }
 
-#[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
+#[derive(Debug, Clone, Eq, PartialEq, Deserialize)]
 pub struct Skin {
+    pub female: PathBuf,
+    pub male: PathBuf,
     pub dark: PathBuf,
     pub olive: PathBuf,
     pub white: PathBuf,
     pub asian: PathBuf,
+}
+
+impl Validate for Skin {
+    fn validate(&self) -> anyhow::Result<()> {
+        let skins = &[&self.dark, &self.olive, &self.white, &self.asian];
+        let male_root = self.male.clone();
+        let female_root = self.female.clone();
+        // check skins
+        for skin in skins {
+            let mut male_path = male_root.to_path_buf();
+            male_path.push(skin);
+            let mut female_path = female_root.to_path_buf();
+            female_path.push(skin);
+            if !male_path.exists() {
+                anyhow::bail!("{} male skin not found", male_path.display());
+            }
+            if !female_path.exists() {
+                anyhow::bail!("{} female skin not found", female_path.display());
+            }
+        }
+
+        Ok(())
+    }
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]

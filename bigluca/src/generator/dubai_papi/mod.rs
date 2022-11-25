@@ -147,7 +147,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
 
             let layers: Vec<Layer> = vec![
                 Some(background.as_layer(self.config, ())?),
-                Some(skin.as_layer(self.config, ())?),
+                Some(skin.as_layer(self.config, gender)?),
                 Some(eyes.as_layer(self.config, ())?),
                 Some(mood.as_layer(self.config, ())?),
                 beard
