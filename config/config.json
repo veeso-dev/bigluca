@@ -2,12 +2,12 @@
   "dubai_papi": {
     "assets": {
       "background": {
-        "burj_al_arab": "assets/images/duba_papi/background/burj_al_arab.png",
-        "burj_khalifa": "assets/images/duba_papi/background/burj_khalifa.png",
-        "downtown": "assets/images/duba_papi/background/downtown.png",
-        "dubai_marina_day": "assets/images/duba_papi/background/dubai_marina_day.png",
-        "dubai_marina_night": "assets/images/duba_papi/background/dubai_marina_night.png",
-        "skyline_night": "assets/images/duba_papi/background/skyline_night.png"
+        "burj_al_arab": "assets/images/dubai_papi/background/burj_al_arab.png",
+        "burj_khalifa": "assets/images/dubai_papi/background/burj_khalifa.png",
+        "downtown": "assets/images/dubai_papi/background/downtown.png",
+        "dubai_marina_day": "assets/images/dubai_papi/background/dubai_marina_day.png",
+        "dubai_marina_night": "assets/images/dubai_papi/background/dubai_marina_night.png",
+        "skyline_night": "assets/images/dubai_papi/background/skyline_night.png"
       },
       "beard": {
         "hair_color": {
@@ -19,22 +19,22 @@
           "pink": "pink.png",
           "red": "red.png"
         },
-        "chevron": "assets/images/duba_papi/beard/chevron",
-        "chin_strip": "assets/images/duba_papi/beard/chin_strip",
-        "circle_beard": "assets/images/duba_papi/beard/circle_beard",
-        "royale_beard": "assets/images/duba_papi/beard/royale_beard",
-        "short_boxed_beard": "assets/images/duba_papi/beard/short_boxed_beard",
-        "three_day_stubble_beard": "assets/images/duba_papi/beard/three_day_stubble_beard"
+        "chevron": "assets/images/dubai_papi/beard/chevron",
+        "chin_strip": "assets/images/dubai_papi/beard/chin_strip",
+        "circle_beard": "assets/images/dubai_papi/beard/circle_beard",
+        "royale_beard": "assets/images/dubai_papi/beard/royale_beard",
+        "short_boxed_beard": "assets/images/dubai_papi/beard/short_boxed_beard",
+        "three_day_stubble_beard": "assets/images/dubai_papi/beard/three_day_stubble_beard"
       },
       "eyes": {
-        "black": "assets/images/duba_papi/eyes/black.png",
-        "blue": "assets/images/duba_papi/eyes/blue.png",
-        "brown": "assets/images/duba_papi/eyes/brown.png",
-        "green": "assets/images/duba_papi/eyes/green.png"
+        "black": "assets/images/dubai_papi/eyes/black.png",
+        "blue": "assets/images/dubai_papi/eyes/blue.png",
+        "brown": "assets/images/dubai_papi/eyes/brown.png",
+        "green": "assets/images/dubai_papi/eyes/green.png"
       },
       "glasses": {
-        "eyeglasses": "assets/images/duba_papi/glasses/eyeglasses.png",
-        "sunglasses": "assets/images/duba_papi/glasses/sunglasses.png"
+        "eyeglasses": "assets/images/dubai_papi/glasses/eyeglasses.png",
+        "sunglasses": "assets/images/dubai_papi/glasses/sunglasses.png"
       },
       "hair_style": {
         "hair_color": {
@@ -46,56 +46,56 @@
           "pink": "pink.png",
           "red": "red.png"
         },
-        "bald": "assets/images/duba_papi/hair_style/bald.png",
-        "bob": "assets/images/duba_papi/hair_style/bob",
-        "curly": "assets/images/duba_papi/hair_style/curly",
-        "long": "assets/images/duba_papi/hair_style/long",
-        "pony_tail": "assets/images/duba_papi/hair_style/pony_tail",
-        "bun": "assets/images/duba_papi/hair_style/bun",
-        "buzz": "assets/images/duba_papi/hair_style/buzz",
-        "ivy_league": "assets/images/duba_papi/hair_style/ivy_league",
-        "long_top_short_sides": "assets/images/duba_papi/hair_style/long_top_short_sides",
-        "pixie": "assets/images/duba_papi/hair_style/pixie",
-        "taper": "assets/images/duba_papi/hair_style/taper"
+        "bald": "assets/images/dubai_papi/hair_style/bald.png",
+        "bob": "assets/images/dubai_papi/hair_style/bob",
+        "curly": "assets/images/dubai_papi/hair_style/curly",
+        "long": "assets/images/dubai_papi/hair_style/long",
+        "pony_tail": "assets/images/dubai_papi/hair_style/pony_tail",
+        "bun": "assets/images/dubai_papi/hair_style/bun",
+        "buzz": "assets/images/dubai_papi/hair_style/buzz",
+        "ivy_league": "assets/images/dubai_papi/hair_style/ivy_league",
+        "long_top_short_sides": "assets/images/dubai_papi/hair_style/long_top_short_sides",
+        "pixie": "assets/images/dubai_papi/hair_style/pixie",
+        "taper": "assets/images/dubai_papi/hair_style/taper"
       },
       "hat_color": {
-        "black": "assets/images/duba_papi/hat_color/black.png",
-        "cyan": "assets/images/duba_papi/hat_color/cyan.png",
-        "green": "assets/images/duba_papi/hat_color/green.png",
-        "red": "assets/images/duba_papi/hat_color/red.png"
+        "black": "assets/images/dubai_papi/hat_color/black.png",
+        "cyan": "assets/images/dubai_papi/hat_color/cyan.png",
+        "green": "assets/images/dubai_papi/hat_color/green.png",
+        "red": "assets/images/dubai_papi/hat_color/red.png"
       },
       "head_phones": {
-        "ear_pods_black": "assets/images/duba_papi/head_phones/ear_pods_black.png",
-        "ear_pods_white": "assets/images/duba_papi/head_phones/ear_pods_white.png",
-        "head_phones_black": "assets/images/duba_papi/head_phones/head_phones_black.png",
-        "head_phones_white": "assets/images/duba_papi/head_phones/head_phones_white.png"
+        "ear_pods_black": "assets/images/dubai_papi/head_phones/ear_pods_black.png",
+        "ear_pods_white": "assets/images/dubai_papi/head_phones/ear_pods_white.png",
+        "head_phones_black": "assets/images/dubai_papi/head_phones/head_phones_black.png",
+        "head_phones_white": "assets/images/dubai_papi/head_phones/head_phones_white.png"
       },
       "mood": {
-        "angry": "assets/images/duba_papi/mood/angry.png",
-        "happy": "assets/images/duba_papi/mood/happy.png",
-        "neutral": "assets/images/duba_papi/mood/neutral.png",
-        "sad": "assets/images/duba_papi/mood/sad.png"
+        "angry": "assets/images/dubai_papi/mood/angry.png",
+        "happy": "assets/images/dubai_papi/mood/happy.png",
+        "neutral": "assets/images/dubai_papi/mood/neutral.png",
+        "sad": "assets/images/dubai_papi/mood/sad.png"
       },
       "skin": {
-        "dark": "assets/images/duba_papi/skin/dark.png",
-        "olive": "assets/images/duba_papi/skin/olive.png",
-        "white": "assets/images/duba_papi/skin/white.png",
-        "asian": "assets/images/duba_papi/skin/asian.png"
+        "dark": "assets/images/dubai_papi/skin/dark.png",
+        "olive": "assets/images/dubai_papi/skin/olive.png",
+        "white": "assets/images/dubai_papi/skin/white.png",
+        "asian": "assets/images/dubai_papi/skin/asian.png"
       },
       "top": {
-        "black_jacket": "assets/images/duba_papi/top/black_jacket.png",
-        "blue_jacket": "assets/images/duba_papi/top/blue_jacket.png",
-        "shirt": "assets/images/duba_papi/top/shirt.png",
-        "cyan_shirt": "assets/images/duba_papi/top/cyan_shirt.png",
-        "yellow_shirt": "assets/images/duba_papi/top/yellow_shirt.png",
-        "tank_top": "assets/images/duba_papi/top/tank_top.png",
-        "black_t_shirt": "assets/images/duba_papi/top/black_t_shirt.png",
-        "blue_t_shirt": "assets/images/duba_papi/top/blue_t_shirt.png",
-        "green_t_shirt": "assets/images/duba_papi/top/green_t_shirt.png",
-        "orange_t_shirt": "assets/images/duba_papi/top/orange_t_shirt.png",
-        "pink_t_shirt": "assets/images/duba_papi/top/pink_t_shirt.png",
-        "red_t_shirt": "assets/images/duba_papi/top/red_t_shirt.png",
-        "white_t_shirt": "assets/images/duba_papi/top/white_t_shirt.png"
+        "black_jacket": "assets/images/dubai_papi/top/black_jacket.png",
+        "blue_jacket": "assets/images/dubai_papi/top/blue_jacket.png",
+        "shirt": "assets/images/dubai_papi/top/shirt.png",
+        "cyan_shirt": "assets/images/dubai_papi/top/cyan_shirt.png",
+        "yellow_shirt": "assets/images/dubai_papi/top/yellow_shirt.png",
+        "tank_top": "assets/images/dubai_papi/top/tank_top.png",
+        "black_t_shirt": "assets/images/dubai_papi/top/black_t_shirt.png",
+        "blue_t_shirt": "assets/images/dubai_papi/top/blue_t_shirt.png",
+        "green_t_shirt": "assets/images/dubai_papi/top/green_t_shirt.png",
+        "orange_t_shirt": "assets/images/dubai_papi/top/orange_t_shirt.png",
+        "pink_t_shirt": "assets/images/dubai_papi/top/pink_t_shirt.png",
+        "red_t_shirt": "assets/images/dubai_papi/top/red_t_shirt.png",
+        "white_t_shirt": "assets/images/dubai_papi/top/white_t_shirt.png"
       }
     }
   }
