@@ -47,7 +47,7 @@ pub fn validate_all_paths(input: TokenStream) -> TokenStream {
         syn::Fields::Named(FieldsNamed { named, .. }) => {
             for field in named.iter() {
                 let field_name = field.ident.as_ref().unwrap();
-                let ss = format!("field {} does not exist in {}", field_name, name);
+                let ss = format!("{} not found in {}", field_name, name);
                 tokens.push(quote! { if !self.#field_name.exists() { anyhow::bail!(#ss); }});
             }
         }
