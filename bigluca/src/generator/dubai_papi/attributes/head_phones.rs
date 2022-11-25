@@ -15,12 +15,12 @@ pub enum HeadPhones {
 impl AsAttribute for HeadPhones {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Ear Pods",
+            "Headphones",
             match self {
                 Self::EarPodsBlack => "Black Ear Pods",
                 Self::EarPodsWhite => "White Ear Pods",
-                Self::HeadPhonesBlack => "Black Head Phones",
-                Self::HeadPhonesWhite => "White Head Phones",
+                Self::HeadPhonesBlack => "Black Headphones",
+                Self::HeadPhonesWhite => "White Headphones",
             },
         )
     }
