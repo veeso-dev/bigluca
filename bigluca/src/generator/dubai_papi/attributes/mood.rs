@@ -29,16 +29,12 @@ impl AsAttribute for Mood {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Mood {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::Angry => &paths.assets.mood.angry,
-                Self::Happy => &paths.assets.mood.happy,
-                Self::Neutral => &paths.assets.mood.neutral,
-                Self::Sad => &paths.assets.mood.sad,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::Angry => &paths.assets.mood.angry,
+            Self::Happy => &paths.assets.mood.happy,
+            Self::Neutral => &paths.assets.mood.neutral,
+            Self::Sad => &paths.assets.mood.sad,
+        })
     }
 }
 

@@ -77,9 +77,9 @@ mod test {
             350,
             350,
             vec![
-                Layer::from_path(Path::new("./test/bruno_strati.png"), 0, 0).unwrap(),
-                Layer::from_path(Path::new("./test/eth.png"), 64, 72).unwrap(),
-                Layer::from_path(Path::new("./test/wow.png"), 200, 180).unwrap(),
+                Layer::from_path(Path::new("./test/bruno_strati.png")).unwrap(),
+                Layer::from_path_with_position(Path::new("./test/eth.png"), 64, 72).unwrap(),
+                Layer::from_path_with_position(Path::new("./test/wow.png"), 200, 180).unwrap(),
             ],
         )
         .unwrap();

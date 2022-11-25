@@ -32,18 +32,14 @@ impl AsAttribute for Background {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Background {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::BurjAlArab => &paths.assets.background.burj_al_arab,
-                Self::BurjKhalifa => &paths.assets.background.burj_khalifa,
-                Self::Downtown => &paths.assets.background.downtown,
-                Self::DubaiMarinaDay => &paths.assets.background.dubai_marina_day,
-                Self::DubaiMarinaNight => &paths.assets.background.dubai_marina_night,
-                Self::SkylineByNight => &paths.assets.background.skyline_night,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::BurjAlArab => &paths.assets.background.burj_al_arab,
+            Self::BurjKhalifa => &paths.assets.background.burj_khalifa,
+            Self::Downtown => &paths.assets.background.downtown,
+            Self::DubaiMarinaDay => &paths.assets.background.dubai_marina_day,
+            Self::DubaiMarinaNight => &paths.assets.background.dubai_marina_night,
+            Self::SkylineByNight => &paths.assets.background.skyline_night,
+        })
     }
 }
 

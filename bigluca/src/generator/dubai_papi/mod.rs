@@ -61,7 +61,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             anyhow::bail!("cannot mint NFT: MAX MINT ({}) reached", MAX_MINT);
         }
         info!(
-            "miting NFT #{}/{}",
+            "minting NFT #{}/{}",
             self.database.dubai_papi_hash.len() + 1,
             MAX_MINT
         );
@@ -72,6 +72,8 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen gender: {:?}", gender);
             let background = *random.choice(Background::all());
             debug!("chosen background: {:?}", background);
+            let skin = *random.choice(Skin::all());
+            debug!("chosen skin: {:?}", skin);
             let beard = if gender == Gender::Male {
                 random.choice_or_none(Beard::all(), 80).cloned()
             } else {
@@ -87,7 +89,10 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 Gender::Male => HairStyle::male(),
             });
             debug!("chosen hair style: {:?}", hair_style);
-            let hair_color = *random.choice(HairColor::all());
+            let hair_color = *random.choice(match skin {
+                Skin::Olive | Skin::Asian => HairColor::no_blonde(),
+                Skin::Dark | Skin::White => HairColor::all(),
+            });
             debug!("chosen hair color: {:?}", hair_color);
             let hat = random.choice_or_none(Hat::all(), 20).cloned();
             debug!("chosen hat color: {:?}", hat);
@@ -95,8 +100,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen head phones: {:?}", head_phones);
             let mood = *random.choice(Mood::all());
             debug!("chosen mood: {:?}", mood);
-            let skin = *random.choice(Skin::all());
-            debug!("chosen skin: {:?}", skin);
+
             let top = *random.choice(match gender {
                 Gender::Female => Top::female(),
                 Gender::Male => Top::male(),
@@ -141,9 +145,25 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 continue;
             }
 
-            let layers: Vec<Layer> = vec![background.as_layer(self.config, ())?]
-                .into_iter()
-                .collect();
+            let layers: Vec<Layer> = vec![
+                Some(background.as_layer(self.config, ())?),
+                Some(skin.as_layer(self.config, ())?),
+                Some(eyes.as_layer(self.config, ())?),
+                Some(mood.as_layer(self.config, ())?),
+                beard
+                    .map(|x| x.as_layer(self.config, hair_color))
+                    .transpose()?,
+                Some(top.as_layer(self.config, ())?),
+                Some(hair_style.as_layer(self.config, hair_color)?),
+                glasses.map(|x| x.as_layer(self.config, ())).transpose()?,
+                head_phones
+                    .map(|x| x.as_layer(self.config, ()))
+                    .transpose()?,
+                hat.map(|x| x.as_layer(self.config, ())).transpose()?,
+            ]
+            .into_iter()
+            .flatten()
+            .collect();
             let image = RenderEngine::render(350, 350, layers)?;
             // push changes to database
             self.database.names.push(metadata.name.clone());

@@ -79,25 +79,21 @@ impl AsAttribute for Top {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Top {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::BlackJacket => &paths.assets.top.black_jacket,
-                Self::BlueJacket => &paths.assets.top.blue_jacket,
-                Self::Shirt => &paths.assets.top.shirt,
-                Self::CyanShirt => &paths.assets.top.cyan_shirt,
-                Self::YellowShirt => &paths.assets.top.yellow_shirt,
-                Self::TankTop => &paths.assets.top.tank_top,
-                Self::BlackTShirt => &paths.assets.top.black_t_shirt,
-                Self::BlueTShirt => &paths.assets.top.blue_t_shirt,
-                Self::GreenTShirt => &paths.assets.top.green_t_shirt,
-                Self::OrangeTShirt => &paths.assets.top.orange_t_shirt,
-                Self::PinkTShirt => &paths.assets.top.pink_t_shirt,
-                Self::RedTShirt => &paths.assets.top.red_t_shirt,
-                Self::WhiteTShirt => &paths.assets.top.white_t_shirt,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::BlackJacket => &paths.assets.top.black_jacket,
+            Self::BlueJacket => &paths.assets.top.blue_jacket,
+            Self::Shirt => &paths.assets.top.shirt,
+            Self::CyanShirt => &paths.assets.top.cyan_shirt,
+            Self::YellowShirt => &paths.assets.top.yellow_shirt,
+            Self::TankTop => &paths.assets.top.tank_top,
+            Self::BlackTShirt => &paths.assets.top.black_t_shirt,
+            Self::BlueTShirt => &paths.assets.top.blue_t_shirt,
+            Self::GreenTShirt => &paths.assets.top.green_t_shirt,
+            Self::OrangeTShirt => &paths.assets.top.orange_t_shirt,
+            Self::PinkTShirt => &paths.assets.top.pink_t_shirt,
+            Self::RedTShirt => &paths.assets.top.red_t_shirt,
+            Self::WhiteTShirt => &paths.assets.top.white_t_shirt,
+        })
     }
 }
 

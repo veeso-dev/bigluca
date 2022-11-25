@@ -28,16 +28,12 @@ impl AsAttribute for Eyes {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Eyes {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::Black => &paths.assets.eyes.black,
-                Self::Blue => &paths.assets.eyes.blue,
-                Self::Brown => &paths.assets.eyes.brown,
-                Self::Green => &paths.assets.eyes.green,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::Black => &paths.assets.eyes.black,
+            Self::Blue => &paths.assets.eyes.blue,
+            Self::Brown => &paths.assets.eyes.brown,
+            Self::Green => &paths.assets.eyes.green,
+        })
     }
 }
 

@@ -11,6 +11,20 @@ pub enum HairColor {
     Red,
 }
 
+impl HairColor {
+    /// Return all variants without blonde
+    pub fn no_blonde() -> &'static [Self] {
+        &[
+            Self::Black,
+            Self::Brown,
+            Self::Blue,
+            Self::Green,
+            Self::Pink,
+            Self::Red,
+        ]
+    }
+}
+
 impl AsAttribute for HairColor {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(

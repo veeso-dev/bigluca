@@ -20,7 +20,7 @@ impl Skin {
             Self::Dark => &config.assets.skin.dark,
             Self::Olive => &config.assets.skin.olive,
             Self::White => &config.assets.skin.white,
-            Self::Asian => &config.assets.skin.white,
+            Self::Asian => &config.assets.skin.asian,
         }
         .to_path_buf()
     }
@@ -42,7 +42,7 @@ impl AsAttribute for Skin {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Skin {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(&self.path(paths), 96, 24)
+        Layer::from_path(&self.path(paths))
     }
 }
 

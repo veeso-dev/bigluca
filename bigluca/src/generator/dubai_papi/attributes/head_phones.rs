@@ -28,16 +28,12 @@ impl AsAttribute for HeadPhones {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for HeadPhones {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::EarPodsBlack => &paths.assets.head_phones.ear_pods_black,
-                Self::EarPodsWhite => &paths.assets.head_phones.ear_pods_white,
-                Self::HeadPhonesBlack => &paths.assets.head_phones.head_phones_black,
-                Self::HeadPhonesWhite => &paths.assets.head_phones.head_phones_white,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::EarPodsBlack => &paths.assets.head_phones.ear_pods_black,
+            Self::EarPodsWhite => &paths.assets.head_phones.ear_pods_white,
+            Self::HeadPhonesBlack => &paths.assets.head_phones.head_phones_black,
+            Self::HeadPhonesWhite => &paths.assets.head_phones.head_phones_white,
+        })
     }
 }
 

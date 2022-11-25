@@ -30,17 +30,13 @@ impl AsAttribute for Hat {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Hat {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::Black => &paths.assets.hat.black,
-                Self::Cyan => &paths.assets.hat.cyan,
-                Self::Green => &paths.assets.hat.green,
-                Self::Pink => &paths.assets.hat.pink,
-                Self::Red => &paths.assets.hat.red,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::Black => &paths.assets.hat.black,
+            Self::Cyan => &paths.assets.hat.cyan,
+            Self::Green => &paths.assets.hat.green,
+            Self::Pink => &paths.assets.hat.pink,
+            Self::Red => &paths.assets.hat.red,
+        })
     }
 }
 

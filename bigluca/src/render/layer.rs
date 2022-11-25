@@ -19,8 +19,13 @@ pub struct Layer {
 }
 
 impl Layer {
-    /// Create layer loading an image from path; then define also positioning
-    pub fn from_path(path: &Path, x: u32, y: u32) -> anyhow::Result<Self> {
+    /// Create layer loading an image from path; position is default (0;0)
+    pub fn from_path(path: &Path) -> anyhow::Result<Self> {
+        Self::from_path_with_position(path, 0, 0)
+    }
+
+    /// Load layer from path and position
+    pub fn from_path_with_position(path: &Path, x: u32, y: u32) -> anyhow::Result<Self> {
         debug!("loading layer from path {}", path.display());
         let file = File::open(path)?;
         let mut reader = BufReader::new(file);
@@ -47,7 +52,7 @@ mod test {
 
     #[test]
     fn should_load_layer_from_path() {
-        let layer = Layer::from_path(Path::new("./test/eth.png"), 32, 48).unwrap();
+        let layer = Layer::from_path_with_position(Path::new("./test/eth.png"), 32, 48).unwrap();
         assert_eq!(layer.x, 32);
         assert_eq!(layer.y, 48);
         assert_eq!(layer.image.width(), 256);

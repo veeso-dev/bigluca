@@ -24,14 +24,10 @@ impl AsAttribute for Glasses {
 
 impl AsLayer<&DubaiPapiConfiguration, ()> for Glasses {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
-        Layer::from_path(
-            match self {
-                Self::Eyeglasses => &paths.assets.glasses.eyeglasses,
-                Self::Sunglasses => &paths.assets.glasses.sunglasses,
-            },
-            0,
-            0,
-        )
+        Layer::from_path(match self {
+            Self::Eyeglasses => &paths.assets.glasses.eyeglasses,
+            Self::Sunglasses => &paths.assets.glasses.sunglasses,
+        })
     }
 }
 
