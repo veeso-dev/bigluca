@@ -10,10 +10,10 @@ impl DescriptionGenerator {
     pub fn generate(random: &mut Random, gender: Gender, name: &str) -> String {
         let (subject, personal, possessive) = Self::pronouns(gender);
         // formulae: {name} started {his/her} activity of {START_ACTIVITY} and has become {CAPITAL} {ACTION} {OBJECTS}.
-        // {he/she} currently lives in Dubai. In the weekend you can find {him/her} {hobby}.
+        // {he/she} currently lives in Dubai. At the weekend you can find {him/her} {hobby}.
         let action = *random.choice(Action::all());
         format!(
-            "{} started {} activity of {} and has become {} {} {}. {} currently lives in Dubai. In the weekend you can find {} {}.",
+            "{} started {} activity of {} and has become {} {} {}. {} currently lives in Dubai. At the weekend you can find {} {}.",
             name,
             possessive,
             random.choice(START_ACTIVITY),
