@@ -97,7 +97,10 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen mood: {:?}", mood);
             let skin = *random.choice(Skin::all());
             debug!("chosen skin: {:?}", skin);
-            let top = *random.choice(Top::all());
+            let top = *random.choice(match gender {
+                Gender::Female => Top::female(),
+                Gender::Male => Top::male(),
+            });
             debug!("chosen top: {:?}", top);
 
             // make attributes

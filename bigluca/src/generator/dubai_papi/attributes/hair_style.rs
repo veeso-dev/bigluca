@@ -17,7 +17,6 @@ pub enum HairStyle {
     // male styles
     Bald,
     Bun,
-    Buzz,
     IvyLeague,
     LongTopShortSides,
     Pixie,
@@ -33,7 +32,6 @@ impl HairStyle {
         &[
             Self::Bald,
             Self::Bun,
-            Self::Buzz,
             Self::IvyLeague,
             Self::LongTopShortSides,
             Self::Pixie,
@@ -49,7 +47,6 @@ impl HairStyle {
             Self::Long => &paths.assets.hair_style.long,
             Self::PonyTail => &paths.assets.hair_style.pony_tail,
             Self::Bun => &paths.assets.hair_style.bun,
-            Self::Buzz => &paths.assets.hair_style.buzz,
             Self::IvyLeague => &paths.assets.hair_style.ivy_league,
             Self::LongTopShortSides => &paths.assets.hair_style.long_top_short_sides,
             Self::Pixie => &paths.assets.hair_style.pixie,
@@ -80,7 +77,6 @@ impl AsAttribute for HairStyle {
                 Self::PonyTail => "Pony Tail",
                 Self::Bald => "Bald",
                 Self::Bun => "Bun",
-                Self::Buzz => "Buzz",
                 Self::IvyLeague => "Ivy League",
                 Self::LongTopShortSides => "Long Top Short Sides",
                 Self::Pixie => "Pixie",
@@ -119,7 +115,6 @@ mod test {
             &[
                 HairStyle::Bald,
                 HairStyle::Bun,
-                HairStyle::Buzz,
                 HairStyle::IvyLeague,
                 HairStyle::LongTopShortSides,
                 HairStyle::Pixie,
