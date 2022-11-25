@@ -114,7 +114,6 @@ pub struct HairStyle {
     pub bald: PathBuf,
     pub bun: PathBuf,
     pub ivy_league: PathBuf,
-    pub long_top_short_sides: PathBuf,
     pub pixie: PathBuf,
     pub taper: PathBuf,
 }
@@ -140,7 +139,6 @@ impl Validate for HairStyle {
             &self.pony_tail,
             &self.bun,
             &self.ivy_league,
-            &self.long_top_short_sides,
             &self.pixie,
             &self.taper,
         ];
@@ -163,6 +161,7 @@ pub struct HatColor {
     pub black: PathBuf,
     pub cyan: PathBuf,
     pub green: PathBuf,
+    pub pink: PathBuf,
     pub red: PathBuf,
 }
 

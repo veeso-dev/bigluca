@@ -54,7 +54,6 @@
         "bun": "assets/images/dubai_papi/hair_style/bun",
         "buzz": "assets/images/dubai_papi/hair_style/buzz",
         "ivy_league": "assets/images/dubai_papi/hair_style/ivy_league",
-        "long_top_short_sides": "assets/images/dubai_papi/hair_style/long_top_short_sides",
         "pixie": "assets/images/dubai_papi/hair_style/pixie",
         "taper": "assets/images/dubai_papi/hair_style/taper"
       },
@@ -62,6 +61,7 @@
         "black": "assets/images/dubai_papi/hat_color/black.png",
         "cyan": "assets/images/dubai_papi/hat_color/cyan.png",
         "green": "assets/images/dubai_papi/hat_color/green.png",
+        "pink": "assets/images/dubai_papi/hat_color/pink.png",
         "red": "assets/images/dubai_papi/hat_color/red.png"
       },
       "head_phones": {
