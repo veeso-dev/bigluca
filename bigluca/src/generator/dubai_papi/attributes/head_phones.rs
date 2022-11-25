@@ -8,8 +8,8 @@ use crate::{
 pub enum HeadPhones {
     EarPodsBlack,
     EarPodsWhite,
-    HeadPhonesBlack,
-    HeadPhonesWhite,
+    Black,
+    White,
 }
 
 impl AsAttribute for HeadPhones {
@@ -19,8 +19,8 @@ impl AsAttribute for HeadPhones {
             match self {
                 Self::EarPodsBlack => "Black Ear Pods",
                 Self::EarPodsWhite => "White Ear Pods",
-                Self::HeadPhonesBlack => "Black Headphones",
-                Self::HeadPhonesWhite => "White Headphones",
+                Self::Black => "Black Headphones",
+                Self::White => "White Headphones",
             },
         )
     }
@@ -31,8 +31,8 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for HeadPhones {
         Layer::from_path(match self {
             Self::EarPodsBlack => &paths.assets.head_phones.ear_pods_black,
             Self::EarPodsWhite => &paths.assets.head_phones.ear_pods_white,
-            Self::HeadPhonesBlack => &paths.assets.head_phones.head_phones_black,
-            Self::HeadPhonesWhite => &paths.assets.head_phones.head_phones_white,
+            Self::Black => &paths.assets.head_phones.head_phones_black,
+            Self::White => &paths.assets.head_phones.head_phones_white,
         })
     }
 }
@@ -51,8 +51,8 @@ mod test {
             &[
                 HeadPhones::EarPodsBlack,
                 HeadPhones::EarPodsWhite,
-                HeadPhones::HeadPhonesBlack,
-                HeadPhones::HeadPhonesWhite
+                HeadPhones::Black,
+                HeadPhones::White
             ]
         )
     }
