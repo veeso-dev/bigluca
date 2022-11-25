@@ -6,7 +6,7 @@ mod attributes;
 mod description;
 
 use self::attributes::{
-    Background, Beard, Eyes, Gender, Glasses, HairColor, HairStyle, HatColor, HeadPhones, Skin, Top,
+    Background, Beard, Eyes, Gender, Glasses, HairColor, HairStyle, Hat, HeadPhones, Skin, Top,
 };
 
 use super::GenerateNft;
@@ -89,8 +89,8 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
             debug!("chosen hair style: {:?}", hair_style);
             let hair_color = *random.choice(HairColor::all());
             debug!("chosen hair color: {:?}", hair_color);
-            let hat_color = random.choice_or_none(HatColor::all(), 20).cloned();
-            debug!("chosen hat color: {:?}", hat_color);
+            let hat = random.choice_or_none(Hat::all(), 20).cloned();
+            debug!("chosen hat color: {:?}", hat);
             let head_phones = random.choice_or_none(HeadPhones::all(), 30).cloned();
             debug!("chosen head phones: {:?}", head_phones);
             let mood = *random.choice(Mood::all());
@@ -113,7 +113,7 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
                 glasses.map(|x| x.as_attribute()),
                 Some(hair_color.as_attribute()),
                 Some(hair_style.as_attribute()),
-                hat_color.map(|x| x.as_attribute()),
+                hat.map(|x| x.as_attribute()),
                 Some(mood.as_attribute()),
                 Some(skin.as_attribute()),
                 Some(top.as_attribute()),

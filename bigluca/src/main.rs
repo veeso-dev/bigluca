@@ -46,11 +46,15 @@ fn main() -> anyhow::Result<()> {
     let collection = Collection::from_str(&args.collection)?;
     info!("working on collection: {}", collection.to_string());
 
+    // validate config
     info!("parsing configuration at {}", args.config.display());
     let configuration = Configuration::parse(&args.config)?;
     debug!("validating configuration");
     configuration.validate()?;
     info!("configuration is valid");
+    if args.validate {
+        return Ok(());
+    }
 
     info!("loading database from {}", args.database_path.display());
     let database = if args.database_path.exists() {

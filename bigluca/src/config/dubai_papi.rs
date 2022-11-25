@@ -19,7 +19,7 @@ pub struct Assets {
     pub eyes: Eyes,
     pub glasses: Glasses,
     pub hair_style: HairStyle,
-    pub hat_color: HatColor,
+    pub hat: Hat,
     pub mood: Mood,
     pub skin: Skin,
     pub top: Top,
@@ -157,7 +157,7 @@ impl Validate for HairStyle {
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]
-pub struct HatColor {
+pub struct Hat {
     pub black: PathBuf,
     pub cyan: PathBuf,
     pub green: PathBuf,

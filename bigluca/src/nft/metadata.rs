@@ -95,7 +95,7 @@ mod test {
             String::from("pippo"),
             vec![
                 Attribute::new("collection", "Dubai Papi"),
-                Attribute::new("HatColor", "Orange"),
+                Attribute::new("Hat", "Orange"),
                 Attribute::new("Skin", "Dark"),
             ],
         );
@@ -111,7 +111,7 @@ mod test {
             "Big Luca".to_string(),
             vec![
                 Attribute::new("Collection", "Dubai Papi"),
-                Attribute::new("HatColor", "Orange"),
+                Attribute::new("Hat", "Orange"),
                 Attribute::new("Skin", "Dark"),
             ],
         );
@@ -121,7 +121,7 @@ mod test {
             vec![
                 Attribute::new("Collection", "Dubai Papi"),
                 Attribute::new("Skin", "Dark"),
-                Attribute::new("HatColor", "Orange"),
+                Attribute::new("Hat", "Orange"),
             ],
         );
         assert_eq!(metadata_a.hash(), metadata_b.hash());
@@ -134,7 +134,7 @@ mod test {
             "Big Luca".to_string(),
             vec![
                 Attribute::new("collection", "Dubai Papi"),
-                Attribute::new("HatColor", "Orange"),
+                Attribute::new("Hat", "Orange"),
                 Attribute::new("Skin", "Dark"),
             ],
         );
@@ -144,7 +144,7 @@ mod test {
             vec![
                 Attribute::new("collection", "Dubai Papi"),
                 Attribute::new("Skin", "Olive"),
-                Attribute::new("HatColor", "Blue"),
+                Attribute::new("Hat", "Blue"),
             ],
         );
         assert_ne!(metadata_a.hash(), metadata_b.hash());

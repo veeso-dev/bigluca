@@ -5,7 +5,7 @@ use crate::{
 };
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
-pub enum HatColor {
+pub enum Hat {
     Black,
     Cyan,
     Green,
@@ -13,10 +13,10 @@ pub enum HatColor {
     Red,
 }
 
-impl AsAttribute for HatColor {
+impl AsAttribute for Hat {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Hat Color",
+            "Hat",
             match self {
                 Self::Black => "Black",
                 Self::Cyan => "Cyan",
@@ -28,15 +28,15 @@ impl AsAttribute for HatColor {
     }
 }
 
-impl AsLayer<&DubaiPapiConfiguration, ()> for HatColor {
+impl AsLayer<&DubaiPapiConfiguration, ()> for Hat {
     fn as_layer(&self, paths: &DubaiPapiConfiguration, _states: ()) -> anyhow::Result<Layer> {
         Layer::from_path(
             match self {
-                Self::Black => &paths.assets.hat_color.black,
-                Self::Cyan => &paths.assets.hat_color.cyan,
-                Self::Green => &paths.assets.hat_color.green,
-                Self::Pink => &paths.assets.hat_color.pink,
-                Self::Red => &paths.assets.hat_color.red,
+                Self::Black => &paths.assets.hat.black,
+                Self::Cyan => &paths.assets.hat.cyan,
+                Self::Green => &paths.assets.hat.green,
+                Self::Pink => &paths.assets.hat.pink,
+                Self::Red => &paths.assets.hat.red,
             },
             0,
             0,
@@ -54,14 +54,8 @@ mod test {
     #[test]
     fn should_get_all_attributes() {
         assert_eq!(
-            HatColor::all(),
-            &[
-                HatColor::Black,
-                HatColor::Cyan,
-                HatColor::Green,
-                HatColor::Pink,
-                HatColor::Red,
-            ]
+            Hat::all(),
+            &[Hat::Black, Hat::Cyan, Hat::Green, Hat::Pink, Hat::Red,]
         )
     }
 }

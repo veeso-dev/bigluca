@@ -57,12 +57,12 @@
         "pixie": "assets/images/dubai_papi/hair_style/pixie",
         "taper": "assets/images/dubai_papi/hair_style/taper"
       },
-      "hat_color": {
-        "black": "assets/images/dubai_papi/hat_color/black.png",
-        "cyan": "assets/images/dubai_papi/hat_color/cyan.png",
-        "green": "assets/images/dubai_papi/hat_color/green.png",
-        "pink": "assets/images/dubai_papi/hat_color/pink.png",
-        "red": "assets/images/dubai_papi/hat_color/red.png"
+      "hat": {
+        "black": "assets/images/dubai_papi/hat/black.png",
+        "cyan": "assets/images/dubai_papi/hat/cyan.png",
+        "green": "assets/images/dubai_papi/hat/green.png",
+        "pink": "assets/images/dubai_papi/hat/pink.png",
+        "red": "assets/images/dubai_papi/hat/red.png"
       },
       "head_phones": {
         "ear_pods_black": "assets/images/dubai_papi/head_phones/ear_pods_black.png",

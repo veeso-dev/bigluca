@@ -79,11 +79,11 @@
         "pixie": "/assets/images/hair_style/pixie",
         "taper": "/assets/images/hair_style/taper"
       },
-      "hat_color": {
-        "black": "assets/images/car/hat_color/black.png",
-        "cyan": "assets/images/car/hat_color/cyan.png",
-        "green": "assets/images/car/hat_color/green.png",
-        "red": "assets/images/car/hat_color/red.png"
+      "hat": {
+        "black": "assets/images/car/hat/black.png",
+        "cyan": "assets/images/car/hat/cyan.png",
+        "green": "assets/images/car/hat/green.png",
+        "red": "assets/images/car/hat/red.png"
       },
       "skin": {
         "root": "assets/images/skin",

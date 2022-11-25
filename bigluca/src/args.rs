@@ -31,6 +31,8 @@ pub struct Args {
     pub database_path: PathBuf,
     #[argh(option, short = 'o', description = "specify output directory")]
     pub output: PathBuf,
+    #[argh(switch, description = "validate configuration and exit")]
+    pub validate: bool,
     #[argh(switch, short = 'v', description = "verbose mode")]
     pub verbose: bool,
     #[argh(switch, short = 'V', description = "print version")]
