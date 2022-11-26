@@ -6,7 +6,7 @@ Grid size: 8px
 
 ### Hair
 
-- Black: `#000000`
+- Black: `#101010`
 - Blonde: `#e9c694`
 - Blue: `#2d71b9`
 - Brown: `#704a26`
