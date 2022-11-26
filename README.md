@@ -12,6 +12,37 @@
 
 ## Get started 🚀
 
+What you'll need:
+
+- Rust
+- NodeJS
+
+### Build Big Luca
+
+```sh
+cargo build -r
+```
+
+### Generate NFT
+
+```sh
+cargo run -r -- --config config/config.json --database-path db.json --collection COLLECTION_NAME --output artifacts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE
+```
+
+Collection names:
+
+- dubai-papi
+
+---
+
+## Upload NFT to IPFS
+
+Once the NFT are generated, they will be located at `artifacts/collection-name/` and there will be two files for each NFT, a JSON file with the metadata and a PNG file with the image.
+
+Now enter `tools/ipfs-upload` and run:
+
+```node index.js <PATH_TO_JSON> <PATH_TO_PNG> output/collection_name```
+
 ---
 
 ## License 📃
