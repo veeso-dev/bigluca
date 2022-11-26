@@ -9,10 +9,6 @@ use ring::digest::{Context, SHA256};
 pub struct Metadata {
     /// A human readable description of the item. Markdown is supported.
     pub description: String,
-    /// This is the URL to the image of the item. Can be just about any type of image
-    /// and can be IPFS URLs or paths.
-    /// We recommend using a 350 x 350 image.
-    image: String,
     /// Name of the item.
     pub name: String,
     /// These are the attributes for the item
@@ -36,7 +32,6 @@ impl Metadata {
     pub fn new(description: String, name: String, attributes: Vec<Attribute>) -> Self {
         Self {
             description,
-            image: String::new(),
             name,
             attributes,
         }
