@@ -1,0 +1,46 @@
+{
+  "description": "Big Kathrin started her activity of trading and has become millionaire selling CS weapons. she currently lives in Dubai. At the weekend you can find her on a yacht.",
+  "name": "Big Kathrin",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Curly"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Yellow Shirt"
+    }
+  ]
+}

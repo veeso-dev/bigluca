@@ -1,0 +1,42 @@
+{
+  "description": "Proud Dinesh started his activity of trading and has become billionaire publishing tons of courses about online marketing. he currently lives in Dubai. At the weekend you can find him playing golf.",
+  "name": "Proud Dinesh",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bun"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black Jacket"
+    }
+  ]
+}

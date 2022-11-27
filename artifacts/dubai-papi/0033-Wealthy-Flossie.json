@@ -1,0 +1,46 @@
+{
+  "description": "Wealthy Flossie started her activity of trading and has become rich advertising bags. she currently lives in Dubai. At the weekend you can find her playing poker.",
+  "name": "Wealthy Flossie",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Al Arab"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Eyeglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bob"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

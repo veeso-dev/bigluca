@@ -1,0 +1,42 @@
+{
+  "description": "Pretty Ardith started her activity of dropshipping and has become rich advertising cosmetics. she currently lives in Dubai. At the weekend you can find her at the club.",
+  "name": "Pretty Ardith",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bob"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Shirt"
+    }
+  ]
+}

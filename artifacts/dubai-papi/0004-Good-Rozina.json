@@ -1,0 +1,42 @@
+{
+  "description": "Good Rozina started her activity of dropshipping and has become millionaire advertising bet platforms. she currently lives in Dubai. At the weekend you can find her playing golf.",
+  "name": "Good Rozina",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pony Tail"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Shirt"
+    }
+  ]
+}

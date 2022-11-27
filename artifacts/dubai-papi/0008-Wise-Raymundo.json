@@ -1,0 +1,42 @@
+{
+  "description": "Wise Raymundo started his activity of trading and has become billionaire selling candles. he currently lives in Dubai. At the weekend you can find him working on the next DOGE.",
+  "name": "Wise Raymundo",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Shirt"
+    }
+  ]
+}

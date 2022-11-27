@@ -1,0 +1,46 @@
+{
+  "description": "Hot Ronaldo started his activity of crypto-trading and has become millionaire selling courses. he currently lives in Dubai. At the weekend you can find him on a yacht.",
+  "name": "Hot Ronaldo",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bun"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Cyan"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Orange T-Shirt"
+    }
+  ]
+}

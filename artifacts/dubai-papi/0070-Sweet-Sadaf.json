@@ -1,0 +1,38 @@
+{
+  "description": "Sweet Sadaf started her activity of dropshipping and has become billionaire publishing books on investment strategies. she currently lives in Dubai. At the weekend you can find her working on the next DOGE.",
+  "name": "Sweet Sadaf",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blonde"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Curly"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Shirt"
+    }
+  ]
+}

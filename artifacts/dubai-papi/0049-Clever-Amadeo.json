@@ -1,0 +1,42 @@
+{
+  "description": "Clever Amadeo started his activity of trading and has become rich advertising bags. he currently lives in Dubai. At the weekend you can find him at the gym.",
+  "name": "Clever Amadeo",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black T-Shirt"
+    }
+  ]
+}

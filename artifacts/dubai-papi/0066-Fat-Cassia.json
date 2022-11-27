@@ -1,0 +1,38 @@
+{
+  "description": "Fat Cassia started her activity of trading and has become billionaire publishing books on investment strategies. she currently lives in Dubai. At the weekend you can find her playing golf.",
+  "name": "Fat Cassia",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Curly"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Yellow Shirt"
+    }
+  ]
+}

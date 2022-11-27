@@ -1,0 +1,38 @@
+{
+  "description": "Bad Dalal started her activity of trading and has become rich publishing tons of courses about online marketing. she currently lives in Dubai. At the weekend you can find her playing golf.",
+  "name": "Bad Dalal",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Curly"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Yellow Shirt"
+    }
+  ]
+}

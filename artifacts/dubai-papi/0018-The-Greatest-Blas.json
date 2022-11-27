@@ -1,0 +1,46 @@
+{
+  "description": "The Greatest Blas started his activity of trading and has become billionaire advertising low budget mobile games. he currently lives in Dubai. At the weekend you can find him on a yacht.",
+  "name": "The Greatest Blas",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Al Arab"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

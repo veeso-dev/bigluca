@@ -1,0 +1,42 @@
+{
+  "description": "Handsome Raymond started his activity of crypto-trading and has become millionaire advertising low budget mobile games. he currently lives in Dubai. At the weekend you can find him counting money.",
+  "name": "Handsome Raymond",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Night"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Three Day Stubble Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Orange T-Shirt"
+    }
+  ]
+}
