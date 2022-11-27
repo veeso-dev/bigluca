@@ -43,6 +43,10 @@ Now enter `tools/ipfs-upload` and run:
 
 ```node index.js <PATH_TO_JSON> <PATH_TO_PNG> output/collection_name```
 
+or use the bash script to upload many automatically:
+
+```./deploy.sh ../../artifacts/dubai-papi/ output/dubai-papi/ START_INDEX END_INDEX```
+
 ---
 
 ## License 📃
