@@ -1,6 +1,8 @@
 require("dotenv").config();
 const { NFTStorage, File } = require("nft.storage");
 const fs = require("fs");
+const mime = require("mime");
+const path = require("path");
 
 const NFT_STORAGE_TOKEN = process.env.APIKEY;
 
@@ -8,31 +10,46 @@ if (!NFT_STORAGE_TOKEN) {
   throw new Error("APIKEY unset in environment");
 }
 
+/**
+ * A helper to read a file from a location on disk and return a File object.
+ * Note that this reads the entire file into memory and should not be used for
+ * very large files.
+ * @param {string} filePath the path to a file to store
+ * @returns {File} a File object containing the file content
+ */
+function fileFromPath(filePath) {
+  const content = fs.readFileSync(filePath);
+  const type = mime.getType(filePath);
+  return new File([content], path.basename(filePath), { type });
+}
+
+/**
+ * Reads an image file from `imagePath` and stores an NFT with the given name and description.
+ * @param {any} metadata
+ * @param {string} imagePath the path to an image file
+ * @returns {any}
+ */
+async function storeNFT(metadata, imagePath) {
+  // load the file from disk
+  const image = fileFromPath(imagePath);
+
+  // create a new NFTStorage client using our API key
+  const nftstorage = new NFTStorage({ token: NFT_STORAGE_TOKEN });
+
+  metadata.image = image;
+  // call client.store, passing in the image & metadata
+  return nftstorage.store(metadata);
+}
+
 async function run(metadataFilename, imageFilename, outputDir) {
   // load metadata
   const data = fs.readFileSync(metadataFilename, { encoding: "utf8" });
   let metadata = JSON.parse(data);
-  // check if image is set
-  if (metadata.image) {
-    console.error(
-      "metadata.image is set. Clear field if you want to upload file to IPFS"
-    );
-    process.exit(1);
-  }
-  // load output file
-  const outputFile = `${outputDir}/${metadata.name
-    .replace(" ", "-")
-    .replace(/^.*[\\\/]/, "")}.json`;
-  // load image
-  const imageData = fs.readFileSync(imageFilename);
+  const outputFile = `${outputDir}/${path.basename(metadataFilename)}`;
 
-  // load client
-  const client = new NFTStorage({ token: NFT_STORAGE_TOKEN });
-  // load image
-  const image = new File([imageData], "image.png", { type: "image/png" });
-  metadata.image = image;
-  metadata = await client.store(metadata);
-  fs.writeFileSync(outputFile, JSON.stringify(metadata, null, 2));
+  const nft = await storeNFT(metadata, imageFilename);
+  // write output
+  fs.writeFileSync(outputFile, JSON.stringify(nft, null, 2));
 }
 
 // load arguments
