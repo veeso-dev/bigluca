@@ -20,7 +20,11 @@ if (!NFT_STORAGE_TOKEN) {
 function fileFromPath(filePath) {
   const content = fs.readFileSync(filePath);
   const type = mime.getType(filePath);
-  return new File([content], path.basename(filePath), { type });
+  return new File(
+    [content],
+    `${path.basename(filePath)}.${path.extname(filePath)}`,
+    { type }
+  );
 }
 
 /**
@@ -36,9 +40,22 @@ async function storeNFT(metadata, imagePath) {
   // create a new NFTStorage client using our API key
   const nftstorage = new NFTStorage({ token: NFT_STORAGE_TOKEN });
 
-  metadata.image = image;
+  // store image
+  const imageCid = await nftstorage.storeBlob(image);
+  const imageUrl = `ipfs://${imageCid}`;
+
+  metadata.image = imageUrl;
+
+  const metadataCid = await nftstorage.storeBlob(
+    new File([JSON.stringify(metadata)], "metadata.json", { type: "json" })
+  );
   // call client.store, passing in the image & metadata
-  return nftstorage.store(metadata);
+  return {
+    image: imageCid,
+    imageUrl,
+    metadata: metadataCid,
+    metadataUrl: `ipfs://${metadataCid}`,
+  };
 }
 
 async function run(metadataFilename, imageFilename, outputDir) {
