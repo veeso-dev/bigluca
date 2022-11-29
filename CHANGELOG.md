@@ -14,6 +14,9 @@ Released on 29/11/2022
 - Fixed copy
 - Gender ratio changed from 50:50 to 75:25 for male/female
 - More description
+- Changed `fat` to `chubby`
+- Changed `haired` to `hairy`
+- Added more descriptions
 
 ## 0.1.1
 

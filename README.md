@@ -26,7 +26,7 @@ cargo build -r
 ### Generate NFT
 
 ```sh
-cargo run -r -- --config config/config.json --database-path db.json --collection COLLECTION_NAME --output artifacts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE
+cargo run -r -- --config config/config.json --database-path database/db.json --collection COLLECTION_NAME --output artifacts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE -v
 ```
 
 Collection names:
