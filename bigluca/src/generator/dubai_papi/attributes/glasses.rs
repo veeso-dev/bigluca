@@ -42,4 +42,9 @@ mod test {
     fn should_get_all_attributes() {
         assert_eq!(Glasses::all(), &[Glasses::Eyeglasses, Glasses::Sunglasses])
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Glasses::Sunglasses.as_attribute().trait_type, "Glasses");
+    }
 }

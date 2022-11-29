@@ -117,4 +117,9 @@ mod test {
             ]
         );
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&HairStyle::Bald.as_attribute().trait_type, "Hair Style");
+    }
 }

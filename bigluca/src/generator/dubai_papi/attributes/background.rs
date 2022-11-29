@@ -64,4 +64,12 @@ mod test {
             ]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(
+            &Background::BurjAlArab.as_attribute().trait_type,
+            "Background"
+        );
+    }
 }

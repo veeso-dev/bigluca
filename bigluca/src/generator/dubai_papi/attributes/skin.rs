@@ -67,4 +67,9 @@ mod test {
             &[Skin::Dark, Skin::Olive, Skin::White, Skin::Asian,]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Skin::Asian.as_attribute().trait_type, "Skin");
+    }
 }

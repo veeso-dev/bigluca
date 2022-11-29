@@ -29,4 +29,9 @@ mod test {
     fn should_get_all_attributes() {
         assert_eq!(Gender::all(), &[Gender::Male, Gender::Female])
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Gender::Male.as_attribute().trait_type, "Gender");
+    }
 }

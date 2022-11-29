@@ -51,4 +51,9 @@ mod test {
             &[Eyes::Black, Eyes::Blue, Eyes::Brown, Eyes::Green,]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Eyes::Green.as_attribute().trait_type, "Eyes");
+    }
 }

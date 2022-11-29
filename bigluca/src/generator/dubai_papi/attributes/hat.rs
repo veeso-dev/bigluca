@@ -54,4 +54,9 @@ mod test {
             &[Hat::Black, Hat::Cyan, Hat::Green, Hat::Pink, Hat::Red,]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Hat::Black.as_attribute().trait_type, "Hat");
+    }
 }

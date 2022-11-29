@@ -64,4 +64,9 @@ mod test {
             ]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&HairColor::Red.as_attribute().trait_type, "Hair Color");
+    }
 }

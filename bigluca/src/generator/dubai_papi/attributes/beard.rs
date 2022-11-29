@@ -84,4 +84,9 @@ mod test {
             ]
         )
     }
+
+    #[test]
+    fn should_generate_attribute_with_correct_name() {
+        assert_eq!(&Beard::Chevron.as_attribute().trait_type, "Beard");
+    }
 }
