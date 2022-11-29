@@ -1,0 +1,50 @@
+{
+  "description": "Pretty Dwight started his activity of dropshipping and has become a billionaire advertising bet platforms. At the weekend you can find him playing tennis.",
+  "name": "Pretty Dwight",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Three Day Stubble Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Red T-Shirt"
+    }
+  ]
+}

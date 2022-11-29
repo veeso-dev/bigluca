@@ -1,0 +1,42 @@
+{
+  "description": "Golden Raine started her activity of dropshipping and has become rich publishing books on investment strategies. At the weekend you can find her on a yacht.",
+  "name": "Golden Raine",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Curly"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Pink T-Shirt"
+    }
+  ]
+}

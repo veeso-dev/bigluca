@@ -1,0 +1,42 @@
+{
+  "description": "Hey Shanika started her activity of trading and has become rich advertising bet platforms. At the weekend you can find her on a yacht.",
+  "name": "Hey Shanika",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blonde"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Long"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Cyan"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

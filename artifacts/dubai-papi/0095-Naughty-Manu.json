@@ -1,0 +1,38 @@
+{
+  "description": "Naughty Manu started his activity of trading and has become a billionaire trading ETH. At the weekend you can find him playing poker.",
+  "name": "Naughty Manu",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

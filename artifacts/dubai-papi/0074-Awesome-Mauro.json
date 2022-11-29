@@ -1,0 +1,46 @@
+{
+  "description": "Awesome Mauro started his activity of trading and has become rich advertising cosmetics. At the weekend you can find him sponsoring scam crypto projects.",
+  "name": "Awesome Mauro",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Royale Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Shirt"
+    }
+  ]
+}

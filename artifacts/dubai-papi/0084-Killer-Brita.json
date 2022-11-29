@@ -1,0 +1,42 @@
+{
+  "description": "Killer Brita started her activity of dropshipping and has become a millionaire trading SOL. At the weekend you can find her playing poker.",
+  "name": "Killer Brita",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Long"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Tank Top"
+    }
+  ]
+}

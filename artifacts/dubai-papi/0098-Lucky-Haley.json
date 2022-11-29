@@ -1,0 +1,38 @@
+{
+  "description": "Lucky Haley started her activity of dropshipping and has become rich trading ADA. At the weekend you can find her promoting shitcoins.",
+  "name": "Lucky Haley",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bob"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Cyan Shirt"
+    }
+  ]
+}

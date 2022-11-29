@@ -1,0 +1,46 @@
+{
+  "description": "Proud Omari started his activity of trading and has become a billionaire trading DOGE. At the weekend you can find him playing poker.",
+  "name": "Proud Omari",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Ivy League"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Tank Top"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "description": "Bold Tyrese started his activity of dropshipping and has become rich selling real estate. At the weekend you can find him promoting shitcoins.",
+  "name": "Bold Tyrese",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Royale Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bun"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black Jacket"
+    }
+  ]
+}

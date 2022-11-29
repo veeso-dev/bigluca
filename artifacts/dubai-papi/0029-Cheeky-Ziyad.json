@@ -1,0 +1,46 @@
+{
+  "description": "Cheeky Ziyad started his activity of crypto-trading and has become a millionaire advertising NortonVPN. At the weekend you can find him reading web3 books.",
+  "name": "Cheeky Ziyad",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Night"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black Jacket"
+    }
+  ]
+}

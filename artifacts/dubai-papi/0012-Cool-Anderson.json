@@ -1,0 +1,46 @@
+{
+  "description": "Cool Anderson started his activity of crypto-trading and has become a millionaire selling action figures. At the weekend you can find him reading web3 books.",
+  "name": "Cool Anderson",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blonde"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bun"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Green T-Shirt"
+    }
+  ]
+}

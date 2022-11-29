@@ -1,0 +1,38 @@
+{
+  "description": "Hot Enid started her activity of dropshipping and has become rich trading cryptocurrencies. At the weekend you can find her playing tennis.",
+  "name": "Hot Enid",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bob"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Green T-Shirt"
+    }
+  ]
+}

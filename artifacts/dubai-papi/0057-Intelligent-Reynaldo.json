@@ -1,0 +1,50 @@
+{
+  "description": "Intelligent Reynaldo started his activity of trading and has become a billionaire selling action figures. At the weekend you can find him sponsoring scam crypto projects.",
+  "name": "Intelligent Reynaldo",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Three Day Stubble Beard"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Eyeglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Orange T-Shirt"
+    }
+  ]
+}

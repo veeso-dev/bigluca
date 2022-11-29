@@ -1,0 +1,46 @@
+{
+  "description": "Golden Hershel started his activity of crypto-trading and has become a billionaire selling nsfw contents. At the weekend you can find him trolling on Reddit.",
+  "name": "Golden Hershel",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Blue Jacket"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "description": "Old Flavio started his activity of crypto-trading and has become a millionaire trading stocks. At the weekend you can find him promoting shitcoins.",
+  "name": "Old Flavio",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Hat",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black Jacket"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "description": "Smart Wojciech started his activity of crypto-trading and has become rich publishing tons of courses about online marketing. At the weekend you can find him playing golf.",
+  "name": "Smart Wojciech",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Tank Top"
+    }
+  ]
+}

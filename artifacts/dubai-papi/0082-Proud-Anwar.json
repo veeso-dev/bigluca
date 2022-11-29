@@ -1,0 +1,42 @@
+{
+  "description": "Proud Anwar started his activity of crypto-trading and has become a billionaire trading SOL. At the weekend you can find him at the club.",
+  "name": "Proud Anwar",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Circle Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blonde"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black Jacket"
+    }
+  ]
+}

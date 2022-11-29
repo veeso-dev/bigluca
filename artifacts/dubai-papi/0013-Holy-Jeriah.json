@@ -1,0 +1,38 @@
+{
+  "description": "Holy Jeriah started his activity of trading and has become a millionaire trading NFTs. At the weekend you can find him fudding.",
+  "name": "Holy Jeriah",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bald"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Tank Top"
+    }
+  ]
+}

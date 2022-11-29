@@ -1,0 +1,46 @@
+{
+  "description": "Handsome Arnie started his activity of trading and has become a millionaire trading DOGE. At the weekend you can find him relaxing at the swimming pool.",
+  "name": "Handsome Arnie",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Day"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Circle Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Eyeglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

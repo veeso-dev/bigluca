@@ -1,0 +1,46 @@
+{
+  "description": "Old Nikhil started his activity of crypto-trading and has become a millionaire trading ETH. At the weekend you can find him sponsoring scam crypto projects.",
+  "name": "Old Nikhil",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chin Strip"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Green T-Shirt"
+    }
+  ]
+}

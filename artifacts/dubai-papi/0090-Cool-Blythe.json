@@ -1,0 +1,38 @@
+{
+  "description": "Cool Blythe started her activity of trading and has become rich publishing tons of courses about online marketing. At the weekend you can find her reading web3 books.",
+  "name": "Cool Blythe",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Al Arab"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Female"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Long"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Green T-Shirt"
+    }
+  ]
+}

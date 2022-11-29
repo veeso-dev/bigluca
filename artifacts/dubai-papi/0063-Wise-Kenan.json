@@ -1,0 +1,42 @@
+{
+  "description": "Wise Kenan started his activity of trading and has become a billionaire selling cheap drop shipping items. At the weekend you can find him promoting shitcoins.",
+  "name": "Wise Kenan",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Al Arab"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Royale Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Bun"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Tank Top"
+    }
+  ]
+}

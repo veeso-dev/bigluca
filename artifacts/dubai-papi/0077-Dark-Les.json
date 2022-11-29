@@ -1,0 +1,50 @@
+{
+  "description": "Dark Les started his activity of trading and has become rich publishing books on investment strategies. At the weekend you can find him at the club.",
+  "name": "Dark Les",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Khalifa"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Royale Beard"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Ear Pods"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sad"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Red T-Shirt"
+    }
+  ]
+}

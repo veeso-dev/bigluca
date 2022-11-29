@@ -1,0 +1,42 @@
+{
+  "description": "Strange Ahmad started his activity of dropshipping and has become a millionaire publishing books on investment strategies. At the weekend you can find him programming smart contracts.",
+  "name": "Strange Ahmad",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Dubai Marina by Night"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Sunglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Olive"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Black T-Shirt"
+    }
+  ]
+}

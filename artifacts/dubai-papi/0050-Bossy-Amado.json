@@ -1,0 +1,42 @@
+{
+  "description": "Bossy Amado started his activity of trading and has become a billionaire publishing tons of courses about online marketing. At the weekend you can find him on a yacht.",
+  "name": "Bossy Amado",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Royale Beard"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Angry"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Top",
+      "value": "White T-Shirt"
+    }
+  ]
+}

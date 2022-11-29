@@ -1,0 +1,46 @@
+{
+  "description": "Tiny Lenox started his activity of dropshipping and has become rich selling nsfw contents. At the weekend you can find him reading web3 books.",
+  "name": "Tiny Lenox",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Downtown"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Three Day Stubble Beard"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "White Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Neutral"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Red T-Shirt"
+    }
+  ]
+}

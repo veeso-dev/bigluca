@@ -1,0 +1,42 @@
+{
+  "description": "Cool Sheldon started his activity of crypto-trading and has become rich trading ADA. At the weekend you can find him programming smart contracts.",
+  "name": "Cool Sheldon",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Burj Al Arab"
+    },
+    {
+      "trait_type": "Beard",
+      "value": "Chevron"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Taper"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "White"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Red T-Shirt"
+    }
+  ]
+}

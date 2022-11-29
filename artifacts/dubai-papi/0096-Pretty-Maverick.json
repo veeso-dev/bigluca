@@ -1,0 +1,46 @@
+{
+  "description": "Pretty Maverick started his activity of trading and has become a billionaire advertising crypto projects. At the weekend you can find him reading web3 books.",
+  "name": "Pretty Maverick",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Skyline by Night"
+    },
+    {
+      "trait_type": "Headphones",
+      "value": "Black Headphones"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Gender",
+      "value": "Male"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Eyeglasses"
+    },
+    {
+      "trait_type": "Hair Color",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Hair Style",
+      "value": "Pixie"
+    },
+    {
+      "trait_type": "Glasses",
+      "value": "Happy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "Asian"
+    },
+    {
+      "trait_type": "Top",
+      "value": "Orange T-Shirt"
+    }
+  ]
+}
