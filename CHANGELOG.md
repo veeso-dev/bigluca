@@ -1,11 +1,18 @@
 # Changelog
 
 - [Changelog](#changelog)
+  - [0.1.3](#013)
   - [0.1.2](#012)
   - [0.1.1](#011)
   - [0.1.0](#010)
 
 ---
+
+## 0.1.3
+
+Released on 29/11/2022
+
+- Bad attribute name for mood
 
 ## 0.1.2
 

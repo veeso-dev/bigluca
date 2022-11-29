@@ -16,7 +16,7 @@ pub enum Mood {
 impl AsAttribute for Mood {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Glasses",
+            "Mood",
             match self {
                 Self::Angry => "Angry",
                 Self::Happy => "Happy",
