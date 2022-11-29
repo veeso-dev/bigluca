@@ -8,19 +8,18 @@ pub struct DescriptionGenerator;
 
 impl DescriptionGenerator {
     pub fn generate(random: &mut Random, gender: Gender, name: &str) -> String {
-        let (subject, personal, possessive) = Self::pronouns(gender);
+        let (_subject, personal, possessive) = Self::pronouns(gender);
         // formulae: {name} started {his/her} activity of {START_ACTIVITY} and has become {CAPITAL} {ACTION} {OBJECTS}.
         // {he/she} currently lives in Dubai. At the weekend you can find {him/her} {hobby}.
         let action = *random.choice(Action::all());
         format!(
-            "{} started {} activity of {} and has become {} {} {}. {} currently lives in Dubai. At the weekend you can find {} {}.",
+            "{} started {} activity of {} and has become {} {} {}. At the weekend you can find {} {}.",
             name,
             possessive,
             random.choice(START_ACTIVITY),
             random.choice(CAPITAL),
             action.to_string(),
             random.choice(action.objects()),
-            subject,
             personal,
             random.choice(HOBBY),
         )
@@ -35,7 +34,7 @@ impl DescriptionGenerator {
 }
 
 const START_ACTIVITY: &[&str] = &["trading", "crypto-trading", "dropshipping"];
-const CAPITAL: &[&str] = &["millionaire", "rich", "billionaire"];
+const CAPITAL: &[&str] = &["a millionaire", "rich", "a billionaire"];
 const HOBBY: &[&str] = &[
     "at the club",
     "playing golf",
@@ -44,6 +43,15 @@ const HOBBY: &[&str] = &[
     "playing poker",
     "working on the next DOGE",
     "counting money",
+    "fudding",
+    "promoting shitcoins",
+    "posting Bitcoin capitulation prophecies on Twitter",
+    "sponsoring scam crypto projects",
+    "reading web3 books",
+    "programming smart contracts",
+    "relaxing at the swimming pool",
+    "playing tennis",
+    "trolling on Reddit",
 ];
 
 #[derive(AllVariants, Copy, Clone)]
@@ -88,6 +96,7 @@ impl Action {
                 "bags",
                 "NortonVPN",
                 "low budget mobile games",
+                "shitcoins",
             ],
             Self::Publishing => &[
                 "books on investment strategies",

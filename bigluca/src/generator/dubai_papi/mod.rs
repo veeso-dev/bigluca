@@ -68,7 +68,12 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
         for _ in 0..64 {
             let mut random = Random::default();
             // select attributes
-            let gender = *random.choice(Gender::all());
+            // select gender (75% male)
+            let gender = if random.happens(75) {
+                Gender::Male
+            } else {
+                Gender::Female
+            };
             debug!("chosen gender: {:?}", gender);
             let background = *random.choice(Background::all());
             debug!("chosen background: {:?}", background);
