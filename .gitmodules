@@ -1,0 +1,3 @@
+[submodule "nfts"]
+	path = nfts
+	url = git@github.com:cryptopapies/nfts.git

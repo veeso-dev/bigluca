@@ -26,7 +26,7 @@ cargo build -r
 ### Generate NFT
 
 ```sh
-cargo run -r -- --config config/config.json --database-path database/db.json --collection COLLECTION_NAME --output artifacts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE -v
+cargo run -r -- --config config/config.json --database-path database/db.json --collection COLLECTION_NAME --output nfts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE -v
 ```
 
 Collection names:
@@ -45,7 +45,7 @@ Now enter `tools/ipfs-upload` and run:
 
 or use the bash script to upload many automatically:
 
-```./deploy.sh ../../artifacts/dubai-papi/ output/dubai-papi/ START_INDEX END_INDEX```
+```./deploy.sh ../../nfts/dubai-papi/ output/dubai-papi/ START_INDEX END_INDEX```
 
 ---
 
