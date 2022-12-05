@@ -68,6 +68,7 @@ impl App {
             .generate_nft_from_metadata(metadata)?;
 
         self.output_nft(nft)?;
+        self.success = true;
 
         Ok(())
     }

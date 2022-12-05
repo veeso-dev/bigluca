@@ -23,10 +23,18 @@ What you'll need:
 cargo build -r
 ```
 
-### Generate NFT
+### Generate random NFTs
 
 ```sh
 cargo run -r -- --config config/config.json --database-path database/db.json --collection COLLECTION_NAME --output nfts/COLLECTION_NAME -n AMOUNT_OF_NFTS_TO_GENERATE -v
+```
+
+### Generate NFT from attributes
+
+Given a JSON file with name, description and attributes.
+
+```sh
+cargo run -r -- --config config/config.json --database-path database/db.json --collection COLLECTION_NAME --output nfts/COLLECTION_NAME -m <path_to_metadata.json> -v
 ```
 
 Collection names:
