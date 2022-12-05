@@ -8,7 +8,7 @@ keywords = ["nft", "cryptopapies", "generator"]
 name = "bigluca"
 readme = "README.md"
 repository = "https://github.com/cryptopapies/bigluca"
-version = "0.1.3"
+version = "0.2.0"
 
 [[bin]]
 name = "bigluca"

@@ -1,4 +1,6 @@
-use crate::nft::{AsAttribute, Attribute};
+use crate::nft::{AsAttribute, Attribute, FromAttributes};
+
+const TRAIT_TYPE: &str = "Hair Color";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum HairColor {
@@ -28,7 +30,7 @@ impl HairColor {
 impl AsAttribute for HairColor {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Hair Color",
+            TRAIT_TYPE,
             match self {
                 Self::Black => "Black",
                 Self::Brown => "Brown",
@@ -39,6 +41,25 @@ impl AsAttribute for HairColor {
                 Self::Red => "Red",
             },
         )
+    }
+}
+
+impl FromAttributes for HairColor {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Black" => Some(Self::Black),
+                "Brown" => Some(Self::Brown),
+                "Blonde" => Some(Self::Blonde),
+                "Blue" => Some(Self::Blue),
+                "Green" => Some(Self::Green),
+                "Pink" => Some(Self::Pink),
+                "Red" => Some(Self::Red),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

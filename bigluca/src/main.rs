@@ -20,7 +20,7 @@ mod utils;
 use args::Args;
 
 use crate::{
-    app::App,
+    app::{App, Task},
     config::{Configuration, Validate},
     database::nft::NftDatabase,
     generator::Collection,
@@ -65,6 +65,12 @@ fn main() -> anyhow::Result<()> {
     }?;
     info!("database loaded");
 
+    let task = if let Some(p) = args.metadata {
+        Task::GenerateFromMetadata(p)
+    } else {
+        Task::GenerateRandom(args.count)
+    };
+
     App::new(
         collection,
         configuration,
@@ -72,5 +78,5 @@ fn main() -> anyhow::Result<()> {
         args.database_path,
         args.output,
     )
-    .run(args.count)
+    .run(task)
 }

@@ -1,11 +1,13 @@
 use super::HairColor;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
 
 use std::path::PathBuf;
+
+const TRAIT_TYPE: &str = "Beard";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Beard {
@@ -44,7 +46,7 @@ impl Beard {
 impl AsAttribute for Beard {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Beard",
+            TRAIT_TYPE,
             match self {
                 Self::Chevron => "Chevron",
                 Self::ChinStrip => "Chin Strip",
@@ -54,6 +56,24 @@ impl AsAttribute for Beard {
                 Self::ThreeDayStubbleBeard => "Three Day Stubble Beard",
             },
         )
+    }
+}
+
+impl FromAttributes for Beard {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Chevron" => Some(Self::Chevron),
+                "Chin Strip" => Some(Self::ChinStrip),
+                "Circle Beard" => Some(Self::CircleBeard),
+                "Royale Beard" => Some(Self::RoyaleBeard),
+                "Short Boxed Beard" => Some(Self::ShortBoxedBeard),
+                "Three Day Stubble Beard" => Some(Self::ThreeDayStubbleBeard),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

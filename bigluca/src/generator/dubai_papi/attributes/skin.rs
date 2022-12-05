@@ -1,12 +1,13 @@
+use super::Gender;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
 
 use std::path::PathBuf;
 
-use super::Gender;
+const TRAIT_TYPE: &str = "Skin";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Skin {
@@ -36,7 +37,7 @@ impl Skin {
 impl AsAttribute for Skin {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Skin",
+            TRAIT_TYPE,
             match self {
                 Self::Dark => "Dark",
                 Self::Olive => "Olive",
@@ -44,6 +45,22 @@ impl AsAttribute for Skin {
                 Self::Asian => "Asian",
             },
         )
+    }
+}
+
+impl FromAttributes for Skin {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Dark" => Some(Self::Dark),
+                "Olive" => Some(Self::Olive),
+                "White" => Some(Self::White),
+                "Asian" => Some(Self::Asian),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

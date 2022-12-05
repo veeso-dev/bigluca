@@ -29,6 +29,8 @@ pub struct Args {
     pub collection: String,
     #[argh(option, short = 'd', description = "specify database path")]
     pub database_path: PathBuf,
+    #[argh(option, short = 'm', description = "generate NFT from metadata file")]
+    pub metadata: Option<PathBuf>,
     #[argh(option, short = 'o', description = "specify output directory")]
     pub output: PathBuf,
     #[argh(switch, description = "validate configuration and exit")]

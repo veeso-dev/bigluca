@@ -4,7 +4,7 @@
 
 use image::DynamicImage;
 
-pub use self::metadata::{AsAttribute, Attribute, Metadata};
+pub use self::metadata::{AsAttribute, Attribute, FromAttributes, Metadata};
 
 mod metadata;
 

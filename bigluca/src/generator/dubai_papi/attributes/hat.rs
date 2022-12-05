@@ -1,8 +1,10 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
+
+const TRAIT_TYPE: &str = "Hat";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Hat {
@@ -16,7 +18,7 @@ pub enum Hat {
 impl AsAttribute for Hat {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Hat",
+            TRAIT_TYPE,
             match self {
                 Self::Black => "Black",
                 Self::Cyan => "Cyan",
@@ -25,6 +27,23 @@ impl AsAttribute for Hat {
                 Self::Red => "Red",
             },
         )
+    }
+}
+
+impl FromAttributes for Hat {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Black" => Some(Self::Black),
+                "Cyan" => Some(Self::Cyan),
+                "Green" => Some(Self::Green),
+                "Pink" => Some(Self::Pink),
+                "Red" => Some(Self::Red),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

@@ -1,8 +1,10 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
+
+const TRAIT_TYPE: &str = "Background";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Background {
@@ -17,7 +19,7 @@ pub enum Background {
 impl AsAttribute for Background {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Background",
+            TRAIT_TYPE,
             match self {
                 Self::BurjAlArab => "Burj Al Arab",
                 Self::BurjKhalifa => "Burj Khalifa",
@@ -27,6 +29,24 @@ impl AsAttribute for Background {
                 Self::SkylineByNight => "Skyline by Night",
             },
         )
+    }
+}
+
+impl FromAttributes for Background {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Burj Al Arab" => Some(Self::BurjAlArab),
+                "Burj Khalifa" => Some(Self::BurjKhalifa),
+                "Downtown" => Some(Self::Downtown),
+                "Dubai Marina by Day" => Some(Self::DubaiMarinaDay),
+                "Dubai Marina by Night" => Some(Self::DubaiMarinaNight),
+                "Skyline by Night" => Some(Self::SkylineByNight),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

@@ -1,4 +1,6 @@
-use crate::nft::{AsAttribute, Attribute};
+use crate::nft::{AsAttribute, Attribute, FromAttributes};
+
+const TRAIT_TYPE: &str = "Gender";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Gender {
@@ -9,12 +11,26 @@ pub enum Gender {
 impl AsAttribute for Gender {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Gender",
+            TRAIT_TYPE,
             match self {
                 Self::Female => "Female",
                 Self::Male => "Male",
             },
         )
+    }
+}
+
+impl FromAttributes for Gender {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Female" => Some(Self::Female),
+                "Male" => Some(Self::Male),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

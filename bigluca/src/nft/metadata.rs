@@ -27,6 +27,10 @@ pub trait AsAttribute {
     fn as_attribute(&self) -> Attribute;
 }
 
+pub trait FromAttributes: Sized {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self>;
+}
+
 impl Metadata {
     /// Instantiates a new Metadata item
     pub fn new(description: String, name: String, attributes: Vec<Attribute>) -> Self {

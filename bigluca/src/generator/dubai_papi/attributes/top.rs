@@ -1,8 +1,10 @@
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
+
+const TRAIT_TYPE: &str = "Top";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Top {
@@ -57,7 +59,7 @@ impl Top {
 impl AsAttribute for Top {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Top",
+            TRAIT_TYPE,
             match self {
                 Self::BlackJacket => "Black Jacket",
                 Self::BlueJacket => "Blue Jacket",
@@ -74,6 +76,31 @@ impl AsAttribute for Top {
                 Self::WhiteTShirt => "White T-Shirt",
             },
         )
+    }
+}
+
+impl FromAttributes for Top {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Black Jacket" => Some(Self::BlackJacket),
+                "Blue Jacket" => Some(Self::BlueJacket),
+                "Shirt" => Some(Self::Shirt),
+                "Cyan Shirt" => Some(Self::CyanShirt),
+                "Yellow Shirt" => Some(Self::YellowShirt),
+                "Tank Top" => Some(Self::TankTop),
+                "Black T-Shirt" => Some(Self::BlackTShirt),
+                "Blue T-Shirt" => Some(Self::BlueTShirt),
+                "Green T-Shirt" => Some(Self::GreenTShirt),
+                "Orange T-Shirt" => Some(Self::OrangeTShirt),
+                "Red T-Shirt" => Some(Self::RedTShirt),
+                "Pink T-Shirt" => Some(Self::PinkTShirt),
+                "White T-Shirt" => Some(Self::WhiteTShirt),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

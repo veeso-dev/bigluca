@@ -1,9 +1,11 @@
 //! # Mood
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
+
+const TRAIT_TYPE: &str = "Mood";
 
 #[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
 pub enum Mood {
@@ -16,7 +18,7 @@ pub enum Mood {
 impl AsAttribute for Mood {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Mood",
+            TRAIT_TYPE,
             match self {
                 Self::Angry => "Angry",
                 Self::Happy => "Happy",
@@ -24,6 +26,22 @@ impl AsAttribute for Mood {
                 Self::Sad => "Sad",
             },
         )
+    }
+}
+
+impl FromAttributes for Mood {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Angry" => Some(Self::Angry),
+                "Happy" => Some(Self::Happy),
+                "Neutral" => Some(Self::Neutral),
+                "Sad" => Some(Self::Sad),
+                _ => None,
+            })
+            .flatten()
     }
 }
 

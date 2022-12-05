@@ -1,11 +1,13 @@
-use std::path::PathBuf;
-
 use super::HairColor;
 use crate::{
     config::DubaiPapiConfiguration,
-    nft::{AsAttribute, Attribute},
+    nft::{AsAttribute, Attribute, FromAttributes},
     render::{AsLayer, Layer},
 };
+
+use std::path::PathBuf;
+
+const TRAIT_TYPE: &str = "Hair Style";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum HairStyle {
@@ -66,7 +68,7 @@ impl HairStyle {
 impl AsAttribute for HairStyle {
     fn as_attribute(&self) -> Attribute {
         Attribute::new(
-            "Hair Style",
+            TRAIT_TYPE,
             match self {
                 Self::Bob => "Bob",
                 Self::Curly => "Curly",
@@ -79,6 +81,27 @@ impl AsAttribute for HairStyle {
                 Self::Taper => "Taper",
             },
         )
+    }
+}
+
+impl FromAttributes for HairStyle {
+    fn from_attributes(attributes: &[Attribute]) -> Option<Self> {
+        attributes
+            .iter()
+            .find(|x| x.trait_type == TRAIT_TYPE)
+            .map(|x| match x.value.as_str() {
+                "Bob" => Some(Self::Bob),
+                "Curly" => Some(Self::Curly),
+                "Long" => Some(Self::Long),
+                "Pony Tail" => Some(Self::PonyTail),
+                "Bald" => Some(Self::Bald),
+                "Bun" => Some(Self::Bun),
+                "Ivy League" => Some(Self::IvyLeague),
+                "Pixie" => Some(Self::Pixie),
+                "Taper" => Some(Self::Taper),
+                _ => None,
+            })
+            .flatten()
     }
 }
 
