@@ -29,12 +29,11 @@ impl FromAttributes for Glasses {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Eyeglasses" => Some(Self::Eyeglasses),
                 "Sunglasses" => Some(Self::Sunglasses),
                 _ => None,
             })
-            .flatten()
     }
 }
 

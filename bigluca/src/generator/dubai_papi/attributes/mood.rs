@@ -34,14 +34,13 @@ impl FromAttributes for Mood {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Angry" => Some(Self::Angry),
                 "Happy" => Some(Self::Happy),
                 "Neutral" => Some(Self::Neutral),
                 "Sad" => Some(Self::Sad),
                 _ => None,
             })
-            .flatten()
     }
 }
 

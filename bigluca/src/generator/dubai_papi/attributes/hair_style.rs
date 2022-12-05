@@ -89,7 +89,7 @@ impl FromAttributes for HairStyle {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Bob" => Some(Self::Bob),
                 "Curly" => Some(Self::Curly),
                 "Long" => Some(Self::Long),
@@ -101,7 +101,6 @@ impl FromAttributes for HairStyle {
                 "Taper" => Some(Self::Taper),
                 _ => None,
             })
-            .flatten()
     }
 }
 

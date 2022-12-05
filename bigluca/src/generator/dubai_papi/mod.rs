@@ -242,10 +242,10 @@ impl<'a> GenerateNft for DubaiPapi<'a> {
         self.database.names.push(metadata.name.clone());
         self.database.dubai_papi_hash.push(metadata_hash);
 
-        return Ok(Nft::new(
+        Ok(Nft::new(
             self.database.dubai_papi_hash.len(),
             image,
             metadata,
-        ));
+        ))
     }
 }

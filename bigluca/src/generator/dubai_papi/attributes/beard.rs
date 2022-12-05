@@ -64,7 +64,7 @@ impl FromAttributes for Beard {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Chevron" => Some(Self::Chevron),
                 "Chin Strip" => Some(Self::ChinStrip),
                 "Circle Beard" => Some(Self::CircleBeard),
@@ -73,7 +73,6 @@ impl FromAttributes for Beard {
                 "Three Day Stubble Beard" => Some(Self::ThreeDayStubbleBeard),
                 _ => None,
             })
-            .flatten()
     }
 }
 

@@ -33,14 +33,13 @@ impl FromAttributes for Eyes {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Black" => Some(Self::Black),
                 "Blue" => Some(Self::Blue),
                 "Brown" => Some(Self::Brown),
                 "Green" => Some(Self::Green),
                 _ => None,
             })
-            .flatten()
     }
 }
 

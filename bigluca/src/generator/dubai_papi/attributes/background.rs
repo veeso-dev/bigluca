@@ -37,7 +37,7 @@ impl FromAttributes for Background {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Burj Al Arab" => Some(Self::BurjAlArab),
                 "Burj Khalifa" => Some(Self::BurjKhalifa),
                 "Downtown" => Some(Self::Downtown),
@@ -46,7 +46,6 @@ impl FromAttributes for Background {
                 "Skyline by Night" => Some(Self::SkylineByNight),
                 _ => None,
             })
-            .flatten()
     }
 }
 

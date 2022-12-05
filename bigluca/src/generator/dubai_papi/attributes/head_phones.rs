@@ -33,14 +33,13 @@ impl FromAttributes for HeadPhones {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Black Ear Pods" => Some(Self::EarPodsBlack),
                 "White Ear Pods" => Some(Self::EarPodsWhite),
                 "Black Headphones" => Some(Self::Black),
                 "White Headphones" => Some(Self::White),
                 _ => None,
             })
-            .flatten()
     }
 }
 

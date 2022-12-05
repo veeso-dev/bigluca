@@ -49,7 +49,7 @@ impl FromAttributes for HairColor {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Black" => Some(Self::Black),
                 "Brown" => Some(Self::Brown),
                 "Blonde" => Some(Self::Blonde),
@@ -59,7 +59,6 @@ impl FromAttributes for HairColor {
                 "Red" => Some(Self::Red),
                 _ => None,
             })
-            .flatten()
     }
 }
 

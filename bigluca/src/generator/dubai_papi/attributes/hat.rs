@@ -35,7 +35,7 @@ impl FromAttributes for Hat {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Black" => Some(Self::Black),
                 "Cyan" => Some(Self::Cyan),
                 "Green" => Some(Self::Green),
@@ -43,7 +43,6 @@ impl FromAttributes for Hat {
                 "Red" => Some(Self::Red),
                 _ => None,
             })
-            .flatten()
     }
 }
 

@@ -53,14 +53,13 @@ impl FromAttributes for Skin {
         attributes
             .iter()
             .find(|x| x.trait_type == TRAIT_TYPE)
-            .map(|x| match x.value.as_str() {
+            .and_then(|x| match x.value.as_str() {
                 "Dark" => Some(Self::Dark),
                 "Olive" => Some(Self::Olive),
                 "White" => Some(Self::White),
                 "Asian" => Some(Self::Asian),
                 _ => None,
             })
-            .flatten()
     }
 }
 
