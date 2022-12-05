@@ -6,13 +6,20 @@ use crate::{
 
 const TRAIT_TYPE: &str = "Hat";
 
-#[derive(Debug, AllVariants, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Hat {
     Black,
     Cyan,
     Green,
     Pink,
     Red,
+    Santa,
+}
+
+impl Hat {
+    pub fn all_random() -> &'static [Hat] {
+        &[Self::Black, Self::Cyan, Self::Green, Self::Pink, Self::Red]
+    }
 }
 
 impl AsAttribute for Hat {
@@ -25,6 +32,7 @@ impl AsAttribute for Hat {
                 Self::Green => "Green",
                 Self::Pink => "Pink",
                 Self::Red => "Red",
+                Self::Santa => "Santa",
             },
         )
     }
@@ -41,6 +49,7 @@ impl FromAttributes for Hat {
                 "Green" => Some(Self::Green),
                 "Pink" => Some(Self::Pink),
                 "Red" => Some(Self::Red),
+                "Santa" => Some(Self::Santa),
                 _ => None,
             })
     }
@@ -54,6 +63,7 @@ impl AsLayer<&DubaiPapiConfiguration, ()> for Hat {
             Self::Green => &paths.assets.hat.green,
             Self::Pink => &paths.assets.hat.pink,
             Self::Red => &paths.assets.hat.red,
+            Self::Santa => &paths.assets.hat.santa,
         })
     }
 }
@@ -68,7 +78,7 @@ mod test {
     #[test]
     fn should_get_all_attributes() {
         assert_eq!(
-            Hat::all(),
+            Hat::all_random(),
             &[Hat::Black, Hat::Cyan, Hat::Green, Hat::Pink, Hat::Red,]
         )
     }

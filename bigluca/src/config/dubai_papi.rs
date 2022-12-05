@@ -163,6 +163,7 @@ pub struct Hat {
     pub green: PathBuf,
     pub pink: PathBuf,
     pub red: PathBuf,
+    pub santa: PathBuf,
 }
 
 #[derive(Debug, ValidateAllPaths, Clone, Eq, PartialEq, Deserialize)]

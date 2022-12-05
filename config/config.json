@@ -62,7 +62,8 @@
         "cyan": "assets/images/dubai_papi/hat/cyan.png",
         "green": "assets/images/dubai_papi/hat/green.png",
         "pink": "assets/images/dubai_papi/hat/pink.png",
-        "red": "assets/images/dubai_papi/hat/red.png"
+        "red": "assets/images/dubai_papi/hat/red.png",
+        "santa": "assets/images/dubai_papi/hat/santa.png"
       },
       "head_phones": {
         "ear_pods_black": "assets/images/dubai_papi/head_phones/ear_pods_black.png",

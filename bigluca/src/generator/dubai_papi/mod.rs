@@ -87,7 +87,7 @@ impl<'a> DubaiPapi<'a> {
             Skin::Dark | Skin::White => HairColor::all(),
         });
         debug!("chosen hair color: {:?}", hair_color);
-        let hat = random.choice_or_none(Hat::all(), 20).cloned();
+        let hat = random.choice_or_none(Hat::all_random(), 20).cloned();
         debug!("chosen hat color: {:?}", hat);
         let head_phones = random.choice_or_none(HeadPhones::all(), 30).cloned();
         debug!("chosen head phones: {:?}", head_phones);
