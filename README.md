@@ -59,4 +59,6 @@ or use the bash script to upload many automatically:
 
 ## License 📃
 
-(c) Copyright 2022 Christian Visintin, all rights reserved.
+bigluca is licensed under the MIT license.
+
+You can read the entire license [HERE](LICENSE)
